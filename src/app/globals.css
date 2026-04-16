@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Stitch design system colors */
+  --color-primary:                   #340075;
+  --color-secondary:                 #b5005d;
+  --color-tertiary:                  #2e007b;
+  --color-background:                #f8f9ff;
+  --color-surface:                   #f8f9ff;
+  --color-surface-bright:            #f8f9ff;
+  --color-surface-dim:               #d1daec;
+  --color-surface-variant:           #dae3f5;
+  --color-surface-container:         #e6eeff;
+  --color-surface-container-low:     #eff4ff;
+  --color-surface-container-high:    #e0e9fa;
+  --color-surface-container-highest: #dae3f5;
+  --color-surface-container-lowest:  #ffffff;
+  --color-on-surface:                #131c29;
+  --color-on-surface-variant:        #4a4452;
+  --color-on-primary:                #ffffff;
+  --color-on-secondary:              #ffffff;
+  --color-on-background:             #131c29;
+  --color-primary-container:         #4c1d95;
+  --color-primary-fixed:             #ebdcff;
+  --color-secondary-fixed:           #ffd9e2;
+  --color-tertiary-fixed:            #e8ddff;
+  --color-on-primary-fixed:          #260059;
+  --color-on-primary-fixed-variant:  #572ba0;
+  --color-on-secondary-fixed:        #3f001c;
+  --color-on-tertiary-fixed:         #21005e;
+  --color-on-primary-container:      #b994ff;
+  --color-outline:                   #7b7483;
+  --color-outline-variant:           #ccc3d4;
+  --color-error:                     #ba1a1a;
+  --color-on-error:                  #ffffff;
+  --color-error-container:           #ffdad6;
+  --color-on-error-container:        #93000a;
+
+  /* Fonts */
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-label:    'Space Grotesk', sans-serif;
+  --font-sans:     'Inter', sans-serif;
+
+  /* Border radii */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg:     0.5rem;
+  --radius-xl:     0.75rem;
+  --radius-2xl:    1rem;
+  --radius-3xl:    1.5rem;
+
+  /* Shadows */
+  --shadow-primary: 0 4px 20px rgba(52, 0, 117, 0.25);
+  --shadow-card:    0 4px 20px rgba(30, 39, 52, 0.06);
+  --shadow-panel:   -10px 0 30px rgba(0,0,0,0.04);
+
+  /* Animations */
+  --animate-slide-in-right: slideInRight 0.25s ease-out;
+  --animate-slide-in-up:    slideInUp 0.3s ease-out;
+  --animate-fade-in:        fadeIn 0.2s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Scrollbars */
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #e0e9fa; border-radius: 10px; }
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #ccc3d4; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Dotted canvas background */
+.dotted-canvas {
+  background-image: radial-gradient(#dae3f5 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Tree dashed line */
+.tree-line-v {
+  width: 2px;
+  background-image: linear-gradient(to bottom, #ccc3d4 50%, transparent 0%);
+  background-size: 2px 8px;
+  background-repeat: repeat-y;
+}
+
+/* Font shortcuts */
+.font-headline { font-family: var(--font-headline); }
+.font-body     { font-family: var(--font-body); }
+.font-label    { font-family: var(--font-label); }
+
+/* Material icon fill */
+.icon-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Badge base */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-family: var(--font-label);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+}
+
+/* Nav active */
+.nav-link-active {
+  background: linear-gradient(to right, #2e0571, #3b0c82);
+  color: white;
+  box-shadow: 0 4px 16px rgba(52,0,117,0.2);
+}
+
+/* Input field */
+.input-field {
+  width: 100%;
+  background: var(--color-surface-container-low);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.15s;
+}
+.input-field:focus {
+  box-shadow: 0 0 0 2px rgba(52,0,117,0.15);
+}
+
+/* Status dots */
+.status-dot-passed   { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #10b981; }
+.status-dot-failed   { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #ec4899; animation: pulse 1.5s infinite; }
+.status-dot-untested { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #cbd5e1; }
+.status-dot-progress { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #f59e0b; }
+
+/* Shadow utilities */
+.shadow-primary { box-shadow: var(--shadow-primary); }
+.shadow-card    { box-shadow: var(--shadow-card); }
+.shadow-panel   { box-shadow: var(--shadow-panel); }
