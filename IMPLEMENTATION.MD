@@ -9,9 +9,6 @@ TestTree is a full-stack test case management platform. Engineers organize test 
 ## User Review Required
 
 > [!IMPORTANT]
-> **SQLite vs PostgreSQL**: The plan uses **SQLite** (via Prisma + `better-sqlite3`) so zero cloud setup is needed and you can run it 100% locally out of the box. If you want PostgreSQL, let me know and I'll switch the schema + connection string.
-
-> [!IMPORTANT]
 > **Auth**: The plan uses a **simple email/password + JWT** session stored in a cookie — no OAuth provider required. If you want Google/GitHub OAuth, I can add NextAuth.js.
 
 > [!NOTE]

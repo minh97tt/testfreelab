@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate --schema=./prisma/schema.prisma && next build",
     "start": "next start",
+    "postinstall": "prisma generate --schema=./prisma/schema.prisma",
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts",
@@ -16,7 +17,6 @@
     "@prisma/client": "^6.19.3",
     "@xyflow/react": "^12.10.2",
     "bcryptjs": "^3.0.3",
-    "better-sqlite3": "^11.10.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
     "framer-motion": "^12.38.0",
