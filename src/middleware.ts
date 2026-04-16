@@ -5,9 +5,7 @@ import { verifyToken } from '@/lib/auth'
 // Routes that don't need auth
 const PUBLIC_PATHS = [
   '/login',
-  '/register',
   '/api/auth/login',
-  '/api/auth/register',
   '/share',
   '/api/share',
 ]

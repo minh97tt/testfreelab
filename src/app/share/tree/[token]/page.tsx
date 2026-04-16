@@ -158,7 +158,7 @@ export default async function SharedTreePage({ params }: Props) {
         </Link>
       </header>
 
-      <main className="flex-1 overflow-hidden">
+      <main className="flex flex-1 min-h-0 overflow-hidden">
         <TreeViewClient
           projectId={payload.projectId}
           initialData={{
@@ -166,6 +166,7 @@ export default async function SharedTreePage({ params }: Props) {
             rootCases: [] as TestCase[],
           }}
           readOnly
+          shareToken={token}
           initialFeatureId={payload.featureId}
           lockFeatureSelection
         />

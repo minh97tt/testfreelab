@@ -36,6 +36,7 @@ const fetcher = (url: string) => fetch(url).then(r => r.json())
 // - wider parent/child distance horizontally
 const HORIZONTAL_GAP = 630
 const VERTICAL_GAP = 70
+const STATUS_FILTERS = ['', 'FAILED', 'IN_PROGRESS', 'UNTESTED', 'PASSED'] as const
 
 interface TreeData {
   tree: Folder[]
@@ -49,6 +50,7 @@ interface TreeViewClientProps {
   readOnly?: boolean
   initialFeatureId?: string
   lockFeatureSelection?: boolean
+  shareToken?: string
 }
 
 interface FolderOption {
@@ -94,6 +96,7 @@ export default function TreeViewClient({
   readOnly = false,
   initialFeatureId = '',
   lockFeatureSelection = false,
+  shareToken,
 }: TreeViewClientProps) {
   const router = useRouter()
   const pathname = usePathname()
@@ -114,16 +117,22 @@ export default function TreeViewClient({
   const [parentFolderId, setParentFolderId] = useState<string | null>(null)
   const [featureScopeId, setFeatureScopeId] = useState(initialFeatureId)
   const [shareLoading, setShareLoading] = useState(false)
+  const [statusFilter, setStatusFilter] = useState<(typeof STATUS_FILTERS)[number]>('')
 
   const tree = initialData || data?.data
   const featureOptions = (tree?.tree || []).map((folder) => ({ id: folder.id, name: folder.name }))
-  const scopedFeature = featureScopeId ? findFolderById(tree?.tree || [], featureScopeId) : null
+  const lockedFeatureId = lockFeatureSelection
+    ? (initialFeatureId || tree?.tree?.[0]?.id || '')
+    : ''
+  const effectiveFeatureId = lockFeatureSelection ? lockedFeatureId : featureScopeId
+  const scopedFeature = effectiveFeatureId ? findFolderById(tree?.tree || [], effectiveFeatureId) : null
   const activeFeature = lockFeatureSelection ? (scopedFeature || tree?.tree?.[0] || null) : scopedFeature
-  const createCaseFolderOptions = scopedFeature ? flattenFolderOptions([scopedFeature]) : []
+  const createCaseFolderOptions = activeFeature ? flattenFolderOptions([activeFeature]) : []
 
   const featureQuery = searchParams.get('feature') || ''
 
   useEffect(() => {
+    if (lockFeatureSelection) return
     if (featureQuery) {
       setFeatureScopeId(featureQuery)
       return
@@ -131,17 +140,19 @@ export default function TreeViewClient({
     if (initialFeatureId) {
       setFeatureScopeId((prev) => prev || initialFeatureId)
     }
-  }, [featureQuery, initialFeatureId])
+  }, [featureQuery, initialFeatureId, lockFeatureSelection])
 
   useEffect(() => {
+    if (lockFeatureSelection) return
     if (featureScopeId) return
     if (!tree?.tree?.length) return
     if (tree.tree.length === 1) {
       setFeatureScopeId(tree.tree[0].id)
     }
-  }, [featureScopeId, tree])
+  }, [featureScopeId, tree, lockFeatureSelection])
 
   useEffect(() => {
+    if (lockFeatureSelection) return
     if (!featureScopeId) return
     if (!tree) return
     if (scopedFeature) return
@@ -150,7 +161,7 @@ export default function TreeViewClient({
     params.delete('feature')
     router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`, { scroll: false })
     setFeatureScopeId('')
-  }, [featureScopeId, scopedFeature, searchParams, router, pathname, tree])
+  }, [featureScopeId, scopedFeature, searchParams, router, pathname, tree, lockFeatureSelection])
 
   function changeFeatureScope(nextFeatureId: string) {
     setFeatureScopeId(nextFeatureId)
@@ -197,13 +208,13 @@ export default function TreeViewClient({
   }, [projectId, mutate, readOnly])
 
   async function shareFeature() {
-    if (!featureScopeId || shareLoading) return
+    if (!effectiveFeatureId || shareLoading) return
     setShareLoading(true)
     try {
       const res = await fetch(`/api/projects/${projectId}/shares`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ featureId: featureScopeId }),
+        body: JSON.stringify({ featureId: effectiveFeatureId }),
       })
       const json = await res.json()
       if (!res.ok || !json?.data?.shareUrl) {
@@ -230,32 +241,36 @@ export default function TreeViewClient({
     if (lockFeatureSelection) {
       return activeFeature ? [activeFeature] : []
     }
-    return featureScopeId ? (scopedFeature ? [scopedFeature] : []) : []
-  }, [lockFeatureSelection, activeFeature, featureScopeId, scopedFeature])
+    return effectiveFeatureId ? (scopedFeature ? [scopedFeature] : []) : []
+  }, [lockFeatureSelection, activeFeature, effectiveFeatureId, scopedFeature])
+  const filteredVisibleFolders = useMemo(
+    () => filterFoldersByStatus(visibleFolders, statusFilter),
+    [visibleFolders, statusFilter]
+  )
 
   const selectedCaseId = selectedCase?.id
 
   useEffect(() => {
     if (!readOnly) return
-    if (!visibleFolders.length) return
+    if (!filteredVisibleFolders.length) return
     setExpandedFolders((prev) => {
       if (prev.size > 0) return prev
       const next = new Set<string>()
-      for (const folder of visibleFolders) {
+      for (const folder of filteredVisibleFolders) {
         next.add(folder.id)
       }
       return next
     })
-  }, [readOnly, visibleFolders])
+  }, [readOnly, filteredVisibleFolders])
 
   const { nodes, edges } = useMemo(() => {
     return buildHorizontalTreeGraph({
-      folders: visibleFolders,
+      folders: filteredVisibleFolders,
       rootCases: visibleRootCases,
       expandedFolders,
       selectedCaseId,
       onToggleFolder: toggleFolder,
-      onSelectCase: readOnly ? undefined : setSelectedCase,
+      onSelectCase: setSelectedCase,
       onCreateCase: readOnly ? undefined : (folderId) => {
         setLockCreateCaseFolder(true)
         setCreateCaseFolder(folderId)
@@ -266,10 +281,10 @@ export default function TreeViewClient({
       },
       onMoveCase: readOnly ? undefined : moveCaseToFolder,
     })
-  }, [visibleFolders, visibleRootCases, expandedFolders, selectedCaseId, moveCaseToFolder, readOnly])
+  }, [filteredVisibleFolders, visibleRootCases, expandedFolders, selectedCaseId, moveCaseToFolder, readOnly])
 
   return (
-    <div className="flex flex-1 overflow-hidden">
+    <div className="flex h-full flex-1 overflow-hidden">
       <div className="flex-1 flex flex-col min-w-0 p-4 md:p-6 bg-slate-50/40 dotted-canvas">
         <div className="mb-4 flex items-start justify-between gap-3 flex-wrap">
           <div>
@@ -292,10 +307,10 @@ export default function TreeViewClient({
                 New Feature
               </button>
               <button
-                disabled={!featureScopeId}
+                disabled={!effectiveFeatureId}
                 onClick={() => {
-                  if (!featureScopeId) return
-                  setParentFolderId(featureScopeId)
+                  if (!effectiveFeatureId) return
+                  setParentFolderId(effectiveFeatureId)
                   setShowCreateFolder(true)
                 }}
                 className="flex items-center gap-2 bg-white text-primary border border-outline/20 hover:border-primary/40 px-4 py-2 rounded-xl text-sm font-bold shadow-sm hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
@@ -304,11 +319,11 @@ export default function TreeViewClient({
                 New Folder
               </button>
               <button
-                disabled={!featureScopeId}
+                disabled={!effectiveFeatureId}
                 onClick={() => {
-                  if (featureScopeId) {
+                  if (effectiveFeatureId) {
                     setLockCreateCaseFolder(false)
-                    setCreateCaseFolder(featureScopeId)
+                    setCreateCaseFolder(effectiveFeatureId)
                   }
                 }}
                 className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-xl text-sm font-bold shadow-primary hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
@@ -317,7 +332,7 @@ export default function TreeViewClient({
                 New Test Case
               </button>
               <button
-                disabled={!featureScopeId || shareLoading}
+                disabled={!effectiveFeatureId || shareLoading}
                 onClick={shareFeature}
                 className="flex items-center gap-2 bg-white text-primary border border-outline/20 hover:border-primary/40 px-4 py-2 rounded-xl text-sm font-bold shadow-sm hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
@@ -329,17 +344,37 @@ export default function TreeViewClient({
         </div>
 
         <div className="mb-4 flex items-center gap-3 flex-wrap">
+          {!lockFeatureSelection && (
+            <div className="relative">
+              <select
+                value={effectiveFeatureId}
+                onChange={(e) => changeFeatureScope(e.target.value)}
+                className="appearance-none bg-white border border-outline/20 rounded-xl px-3 py-2 pr-10 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary/20 outline-none"
+              >
+                <option value="">Select Feature (Required)</option>
+                {featureOptions.map((feature) => (
+                  <option key={feature.id} value={feature.id}>
+                    {feature.name}
+                  </option>
+                ))}
+              </select>
+              <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none">
+                expand_more
+              </span>
+            </div>
+          )}
           <div className="relative">
             <select
-              value={featureScopeId}
-              onChange={(e) => changeFeatureScope(e.target.value)}
-              disabled={lockFeatureSelection}
-              className="appearance-none bg-white border border-outline/20 rounded-xl px-3 py-2 pr-10 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary/20 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
+              value={statusFilter}
+              onChange={(e) => {
+                setStatusFilter(e.target.value as (typeof STATUS_FILTERS)[number])
+                setSelectedCase(null)
+              }}
+              className="appearance-none bg-white border border-outline/20 rounded-xl px-3 py-2 pr-10 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary/20 outline-none"
             >
-              {!lockFeatureSelection && <option value="">Select Feature (Required)</option>}
-              {featureOptions.map((feature) => (
-                <option key={feature.id} value={feature.id}>
-                  {feature.name}
+              {STATUS_FILTERS.map((status) => (
+                <option key={status || 'ALL'} value={status}>
+                  {status ? `Status: ${statusConfig[status].label}` : 'Status: All'}
                 </option>
               ))}
             </select>
@@ -357,7 +392,7 @@ export default function TreeViewClient({
         </div>
 
         <div className="flex-1 min-h-0 rounded-2xl bg-white/80 ring-1 ring-outline/10 overflow-hidden shadow-sm relative">
-          {!visibleFolders.length && (
+          {!filteredVisibleFolders.length && (
             <div className="h-full flex items-center justify-center p-8 text-center">
               <div>
                 <span className="material-symbols-outlined text-5xl text-outline block mb-3">folder_open</span>
@@ -366,19 +401,19 @@ export default function TreeViewClient({
               </div>
             </div>
           )}
-          {!!visibleFolders.length && readOnly && nodes.length === 0 && (
-            <ReadOnlyTreeView folders={visibleFolders} />
+          {!!filteredVisibleFolders.length && readOnly && nodes.length === 0 && (
+            <ReadOnlyTreeView folders={filteredVisibleFolders} />
           )}
-          {!!visibleFolders.length && (!readOnly || nodes.length > 0) && (
+          {!!filteredVisibleFolders.length && (!readOnly || nodes.length > 0) && (
             <ReactFlowProvider>
-              <HorizontalTreeCanvas nodes={nodes} edges={edges} graphKey={`${nodes.length}-${edges.length}-${selectedCaseId || 'none'}`} />
+              <HorizontalTreeCanvas nodes={nodes} edges={edges} graphKey={`${nodes.length}-${edges.length}`} />
             </ReactFlowProvider>
           )}
         </div>
       </div>
 
       <AnimatePresence>
-        {!readOnly && selectedCase && (
+        {selectedCase && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -400,6 +435,12 @@ export default function TreeViewClient({
                 projectId={projectId}
                 caseId={selectedCase.id}
                 featureRootId={featureScopeId || undefined}
+                readOnly={readOnly}
+                dataUrl={
+                  readOnly && shareToken
+                    ? `/api/share/tree/${encodeURIComponent(shareToken)}/cases/${selectedCase.id}`
+                    : undefined
+                }
                 onClose={() => setSelectedCase(null)}
                 onUpdate={() => {
                   void mutate()
@@ -862,6 +903,38 @@ function findFolderById(folders: Folder[], id: string): Folder | null {
     if (found) return found
   }
   return null
+}
+
+function filterFoldersByStatus(
+  folders: Folder[],
+  status: (typeof STATUS_FILTERS)[number]
+): Folder[] {
+  if (!status) return folders
+
+  function walk(folder: Folder, keepWhenEmpty = false): Folder | null {
+    const filteredChildren = (folder.children || [])
+      .map((child) => walk(child))
+      .filter((child): child is Folder => Boolean(child))
+    const filteredCases = (folder.testCases || []).filter((testCase) => testCase.status === status)
+
+    if (!keepWhenEmpty && filteredChildren.length === 0 && filteredCases.length === 0) {
+      return null
+    }
+
+    return {
+      ...folder,
+      children: filteredChildren,
+      testCases: filteredCases,
+      _count: {
+        children: filteredChildren.length,
+        testCases: filteredCases.length,
+      },
+    }
+  }
+
+  return folders
+    .map((folder) => walk(folder, true))
+    .filter((folder): folder is Folder => Boolean(folder))
 }
 
 function avg(values: number[]): number {

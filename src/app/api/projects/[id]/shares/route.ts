@@ -36,7 +36,6 @@ export async function POST(req: NextRequest, { params }: Params) {
       projectId,
       featureId: feature.id,
     })
-
     const shareUrl = new URL(`/share/tree/${encodeURIComponent(token)}`, req.nextUrl.origin).toString()
 
     return NextResponse.json({

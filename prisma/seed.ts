@@ -7,13 +7,13 @@ async function main() {
   console.log('🌱 Seeding TestTree database...')
 
   // Create demo user
-  const hashedPassword = await bcrypt.hash('password123', 12)
+  const hashedPassword = await bcrypt.hash('Aa@123456', 12)
   const user = await prisma.user.upsert({
-    where: { email: 'demo@testtree.dev' },
+    where: { email: 'admin@testtree.dev' },
     update: {},
     create: {
-      email: 'demo@testtree.dev',
-      name: 'Alex Chen',
+      email: 'admin@testtree.dev',
+      name: 'Admin Tree',
       password: hashedPassword,
     },
   })

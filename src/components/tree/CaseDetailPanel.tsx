@@ -11,13 +11,23 @@ interface CaseDetailPanelProps {
   projectId: string
   caseId: string
   featureRootId?: string
+  readOnly?: boolean
+  dataUrl?: string
   onClose: () => void
   onUpdate: () => void
 }
 
-export default function CaseDetailPanel({ projectId, caseId, featureRootId, onClose, onUpdate }: CaseDetailPanelProps) {
+export default function CaseDetailPanel({
+  projectId,
+  caseId,
+  featureRootId,
+  readOnly = false,
+  dataUrl,
+  onClose,
+  onUpdate,
+}: CaseDetailPanelProps) {
   const { data, mutate } = useSWR<{ data: TestCase & { results: RunResult[] } }>(
-    `/api/projects/${projectId}/cases/${caseId}`,
+    dataUrl || `/api/projects/${projectId}/cases/${caseId}`,
     fetcher
   )
   const [showEditModal, setShowEditModal] = useState(false)
@@ -41,6 +51,7 @@ export default function CaseDetailPanel({ projectId, caseId, featureRootId, onCl
   )?.executedAt
 
   async function updateStatus(status: TestCase['status']) {
+    if (readOnly) return
     await fetch(`/api/projects/${projectId}/cases/${caseId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
@@ -171,27 +182,28 @@ export default function CaseDetailPanel({ projectId, caseId, featureRootId, onCl
           </div>
         )}
 
-        {/* Quick status update */}
-        <div>
-          <h6 className="text-[11px] font-label font-bold text-outline uppercase tracking-wider mb-2">Quick Update</h6>
-          <div className="grid grid-cols-2 gap-2">
-            {(['PASSED', 'FAILED', 'IN_PROGRESS', 'UNTESTED'] as const).map(s => (
-              <button
-                key={s}
-                onClick={() => updateStatus(s)}
-                className={cn(
-                  'flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer',
-                  tc.status === s
-                    ? `${statusConfig[s].bg} ${statusConfig[s].text} ring-2 ring-offset-1 ring-current`
-                    : 'bg-surface-container-low text-outline hover:bg-surface-container'
-                )}
-              >
-                <span className={cn('w-2 h-2 rounded-full', statusConfig[s].dot)} />
-                {statusConfig[s].label}
-              </button>
-            ))}
+        {!readOnly && (
+          <div>
+            <h6 className="text-[11px] font-label font-bold text-outline uppercase tracking-wider mb-2">Quick Update</h6>
+            <div className="grid grid-cols-2 gap-2">
+              {(['PASSED', 'FAILED', 'IN_PROGRESS', 'UNTESTED'] as const).map(s => (
+                <button
+                  key={s}
+                  onClick={() => updateStatus(s)}
+                  className={cn(
+                    'flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer',
+                    tc.status === s
+                      ? `${statusConfig[s].bg} ${statusConfig[s].text} ring-2 ring-offset-1 ring-current`
+                      : 'bg-surface-container-low text-outline hover:bg-surface-container'
+                  )}
+                >
+                  <span className={cn('w-2 h-2 rounded-full', statusConfig[s].dot)} />
+                  {statusConfig[s].label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Timeline */}
         <div>
@@ -210,21 +222,22 @@ export default function CaseDetailPanel({ projectId, caseId, featureRootId, onCl
         </div>
       </div>
 
-      {/* Actions footer */}
-      <div className="p-5 flex-shrink-0 bg-slate-50/50 border-t border-slate-100 flex flex-col gap-2">
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => setShowEditModal(true)}
-            className="flex-1 bg-white text-slate-600 py-2.5 rounded-xl text-sm font-bold border border-slate-100 hover:bg-slate-50 transition-all"
-          >
-            Edit
-          </button>
-          <button className="flex-1 bg-white text-slate-600 py-2.5 rounded-xl text-sm font-bold border border-slate-100 hover:bg-slate-50 transition-all">Share</button>
+      {!readOnly && (
+        <div className="p-5 flex-shrink-0 bg-slate-50/50 border-t border-slate-100 flex flex-col gap-2">
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setShowEditModal(true)}
+              className="flex-1 bg-white text-slate-600 py-2.5 rounded-xl text-sm font-bold border border-slate-100 hover:bg-slate-50 transition-all"
+            >
+              Edit
+            </button>
+            <button className="flex-1 bg-white text-slate-600 py-2.5 rounded-xl text-sm font-bold border border-slate-100 hover:bg-slate-50 transition-all">Share</button>
+          </div>
         </div>
-      </div>
+      )}
 
-      {showEditModal && (
+      {!readOnly && showEditModal && (
         <EditCaseModal
           projectId={projectId}
           testCase={tc}

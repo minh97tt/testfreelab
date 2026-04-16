@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -99,10 +98,7 @@ export default function LoginPage() {
           </form>
 
           <p className="text-center text-sm text-outline mt-6">
-            No account?{' '}
-            <Link href="/register" className="text-primary font-bold hover:underline">
-              Create one
-            </Link>
+            Need an account? Contact your administrator.
           </p>
         </div>
       </div>
