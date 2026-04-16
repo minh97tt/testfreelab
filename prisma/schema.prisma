@@ -3,8 +3,40 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum ProjectRole {
+  OWNER
+  MEMBER
+}
+
+enum CaseSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum CaseType {
+  MANUAL
+  AUTOMATED
+}
+
+enum CaseStatus {
+  UNTESTED
+  PASSED
+  FAILED
+  BLOCKED
+}
+
+enum RunStatus {
+  QUEUED
+  RUNNING
+  PASSED
+  FAILED
+  CANCELLED
 }
 
 model User {
@@ -35,18 +67,19 @@ model Project {
 }
 
 model ProjectMember {
-  id        String @id @default(cuid())
+  id        String      @id @default(cuid())
   userId    String
   projectId String
-  role      String @default("MEMBER")
+  role      ProjectRole @default(MEMBER)
 
   user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
 
   @@unique([userId, projectId])
+  @@index([userId])
+  @@index([projectId])
 }
 
-// Folders group test cases - can be nested (parent/children)
 model Folder {
   id          String   @id @default(cuid())
   name        String
@@ -57,34 +90,44 @@ model Folder {
   updatedAt   DateTime @updatedAt
 
   project   Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  parent    Folder?    @relation("FolderTree", fields: [parentId], references: [id])
+  parent    Folder?    @relation("FolderTree", fields: [parentId], references: [id], onDelete: SetNull)
   children  Folder[]   @relation("FolderTree")
   testCases TestCase[]
+
+  @@index([projectId])
+  @@index([parentId])
 }
 
 model TestCase {
-  id          String   @id @default(cuid())
-  code        String
-  title       String
-  description String?
-  preconditions String?
-  testData    String?
+  id               String       @id @default(cuid())
+  code             String
+  title            String
+  description      String?
+  preconditions    String?
+  testData         String?
   finalExpectation String?
-  actualResult String?
-  severity    String   @default("MEDIUM")
-  type        String   @default("MANUAL")
-  status      String   @default("UNTESTED")
-  projectId   String
-  folderId    String?
-  archived    Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  actualResult     String?
+  severity         CaseSeverity @default(MEDIUM)
+  type             CaseType     @default(MANUAL)
+  status           CaseStatus   @default(UNTESTED)
+  projectId        String
+  folderId         String?
+  archived         Boolean      @default(false)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
 
   project Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  folder  Folder?     @relation(fields: [folderId], references: [id])
+  folder  Folder?     @relation(fields: [folderId], references: [id], onDelete: SetNull)
   steps   Step[]
   tags    CaseTag[]
   results RunResult[]
+
+  @@unique([projectId, code])
+  @@index([projectId])
+  @@index([folderId])
+  @@index([archived])
+  @@index([status])
+  @@index([severity])
 }
 
 model Step {
@@ -95,11 +138,14 @@ model Step {
   testCaseId String
 
   testCase TestCase @relation(fields: [testCaseId], references: [id], onDelete: Cascade)
+
+  @@unique([testCaseId, order])
+  @@index([testCaseId])
 }
 
 model Tag {
-  id   String    @id @default(cuid())
-  name String    @unique
+  id    String    @id @default(cuid())
+  name  String    @unique
   cases CaseTag[]
 }
 
@@ -111,6 +157,7 @@ model CaseTag {
   tag      Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
 
   @@id([testCaseId, tagId])
+  @@index([tagId])
 }
 
 model TestRun {
@@ -118,31 +165,39 @@ model TestRun {
   name      String
   projectId String
   userId    String
-  status    String    @default("QUEUED")
+  status    RunStatus @default(QUEUED)
   startedAt DateTime?
   endedAt   DateTime?
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
   project Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  user    User        @relation(fields: [userId], references: [id])
+  user    User        @relation(fields: [userId], references: [id], onDelete: Restrict)
   results RunResult[]
+
+  @@index([projectId])
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
 }
 
 model RunResult {
-  id         String   @id @default(cuid())
-  runId      String
-  testCaseId String
-  status     String   @default("UNTESTED")
-  duration   Int?
-  error      String?
-  notes      String?
-  stepResults String? // JSON string: [{stepId, status, actual}]
-  executedAt DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id          String     @id @default(cuid())
+  runId       String
+  testCaseId  String
+  status      CaseStatus @default(UNTESTED)
+  duration    Int?
+  error       String?
+  notes       String?
+  stepResults Json?
+  executedAt  DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 
   run      TestRun  @relation(fields: [runId], references: [id], onDelete: Cascade)
-  testCase TestCase @relation(fields: [testCaseId], references: [id])
+  testCase TestCase @relation(fields: [testCaseId], references: [id], onDelete: Restrict)
 
   @@unique([runId, testCaseId])
+  @@index([testCaseId])
+  @@index([status])
+  @@index([executedAt])
 }
