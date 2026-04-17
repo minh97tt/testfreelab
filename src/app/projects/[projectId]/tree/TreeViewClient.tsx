@@ -915,6 +915,10 @@ function filterFoldersByStatus(
       .map((child) => walk(child))
       .filter((child): child is Folder => Boolean(child))
     const filteredCases = (folder.testCases || []).filter((testCase) => testCase.status === status)
+    const filteredCaseCount = filteredCases.length + filteredChildren.reduce(
+      (total, child) => total + (child._count?.testCases || child.testCases?.length || 0),
+      0
+    )
 
     if (!keepWhenEmpty && filteredChildren.length === 0 && filteredCases.length === 0) {
       return null
@@ -926,7 +930,7 @@ function filterFoldersByStatus(
       testCases: filteredCases,
       _count: {
         children: filteredChildren.length,
-        testCases: filteredCases.length,
+        testCases: filteredCaseCount,
       },
     }
   }

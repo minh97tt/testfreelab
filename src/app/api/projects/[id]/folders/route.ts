@@ -4,10 +4,14 @@ import { z } from 'zod'
 
 type Params = { params: Promise<{ id: string }> }
 
-// Build nested folder tree from flat list
-function buildTree(folders: {
-  id: string; name: string; description: string | null; projectId: string;
-  parentId: string | null; createdAt: Date; updatedAt: Date;
+interface FolderWithCases {
+  id: string
+  name: string
+  description: string | null
+  projectId: string
+  parentId: string | null
+  createdAt: Date
+  updatedAt: Date
   testCases: {
     id: string
     code: string
@@ -19,14 +23,33 @@ function buildTree(folders: {
     createdAt: Date
     updatedAt: Date
   }[]
-  _count: { children: number; testCases: number };
-}[], parentId: string | null = null): unknown[] {
+  _count: { children: number; testCases: number }
+}
+
+type FolderTreeNode = FolderWithCases & {
+  children: FolderTreeNode[]
+}
+
+// Build nested folder tree from flat list
+function buildTree(folders: FolderWithCases[], parentId: string | null = null): FolderTreeNode[] {
   return folders
     .filter(f => f.parentId === parentId)
-    .map(f => ({
-      ...f,
-      children: buildTree(folders, f.id),
-    }))
+    .map((folder) => {
+      const children = buildTree(folders, folder.id)
+      const descendantCaseCount = children.reduce(
+        (total, child) => total + child._count.testCases,
+        0
+      )
+
+      return {
+        ...folder,
+        children,
+        _count: {
+          children: children.length,
+          testCases: folder.testCases.length + descendantCaseCount,
+        },
+      }
+    })
 }
 
 export async function GET(req: NextRequest, { params }: Params) {
