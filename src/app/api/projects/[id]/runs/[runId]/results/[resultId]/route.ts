@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
+import { CaseStatus } from '@prisma/client'
 
 type Params = { params: Promise<{ id: string; runId: string; resultId: string }> }
 
@@ -21,7 +22,7 @@ export async function PATCH(req: NextRequest, { params }: Params) {
   if (!run) return NextResponse.json({ error: 'Not found' }, { status: 404 })
 
   const schema = z.object({
-    status: z.enum(['PASSED', 'FAILED', 'UNTESTED', 'IN_PROGRESS']),
+    status: z.nativeEnum(CaseStatus),
     notes: z.string().optional(),
     duration: z.number().int().optional(),
     stepResults: z.array(z.object({
@@ -73,9 +74,9 @@ export async function PATCH(req: NextRequest, { params }: Params) {
       },
     })
 
-    // Check if all results for the run are done (not UNTESTED/IN_PROGRESS)
+    // Check if all results for the run are done.
     const pending = await prisma.runResult.count({
-      where: { runId, status: { in: ['UNTESTED', 'IN_PROGRESS'] } },
+      where: { runId, status: 'UNTESTED' },
     })
 
     if (pending === 0) {
