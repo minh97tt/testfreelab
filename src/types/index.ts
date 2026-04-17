@@ -1,6 +1,6 @@
 export type Severity = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW'
 export type TestType = 'E2E' | 'INTEGRATION' | 'API' | 'UI' | 'MANUAL'
-export type CaseStatus = 'PASSED' | 'FAILED' | 'UNTESTED' | 'IN_PROGRESS'
+export type CaseStatus = 'PASSED' | 'FAILED' | 'UNTESTED' | 'BLOCKED'
 export type RunStatus = 'QUEUED' | 'RUNNING' | 'PASSED' | 'FAILED' | 'CANCELLED'
 export type MemberRole = 'OWNER' | 'ADMIN' | 'MEMBER' | 'VIEWER'
 

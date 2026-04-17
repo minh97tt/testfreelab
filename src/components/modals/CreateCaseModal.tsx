@@ -109,21 +109,21 @@ export default function CreateCaseModal({ projectId, folderId, folderOptions, lo
           <input {...register('title')} placeholder="e.g. User login with valid credentials" className="input-field" autoFocus />
         </Field>
 
+         <Field label="Expected Result" error={errors.finalExpectation?.message}>
+          <textarea
+            {...register('finalExpectation')}
+            placeholder="E.g. Login succeeds, redirects to /dashboard, user name is visible"
+            rows={4}
+            className="input-field resize-y min-h-24"
+          />
+        </Field>
+
         <Field label="Actual Result (optional)">
           <textarea
             {...register('actualResult')}
             placeholder="Optional baseline actual result at test-case level"
             rows={3}
             className="input-field resize-y min-h-20"
-          />
-        </Field>
-
-        <Field label="Expected Result" error={errors.finalExpectation?.message}>
-          <textarea
-            {...register('finalExpectation')}
-            placeholder="E.g. Login succeeds, redirects to /dashboard, user name is visible"
-            rows={4}
-            className="input-field resize-y min-h-24"
           />
         </Field>
 

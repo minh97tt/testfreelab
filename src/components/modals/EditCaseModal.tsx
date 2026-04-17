@@ -137,13 +137,6 @@ export default function EditCaseModal({ projectId, testCase, featureRootId, onCl
         <Field label="Title" error={errors.title?.message}>
           <input {...register('title')} className="input-field" />
         </Field>
-        <Field label="Actual Result (optional)">
-          <textarea
-            {...register('actualResult')}
-            rows={3}
-            className="input-field resize-y min-h-20"
-          />
-        </Field>
         <Field label="Expected Result" error={errors.finalExpectation?.message}>
           <textarea
             {...register('finalExpectation')}
@@ -151,6 +144,14 @@ export default function EditCaseModal({ projectId, testCase, featureRootId, onCl
             className="input-field resize-y min-h-24"
           />
         </Field>
+        <Field label="Actual Result (optional)">
+          <textarea
+            {...register('actualResult')}
+            rows={3}
+            className="input-field resize-y min-h-20"
+          />
+        </Field>
+        
         <div className="grid grid-cols-2 gap-4">
           <Field label="Severity">
             <div className="relative">

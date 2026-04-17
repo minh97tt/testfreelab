@@ -12,7 +12,7 @@ import CreateFolderModal from '@/components/modals/CreateFolderModal'
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
 const SEVERITIES = ['', 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'] as const
-const STATUSES = ['', 'PASSED', 'FAILED', 'UNTESTED', 'IN_PROGRESS'] as const
+const STATUSES = ['', 'PASSED', 'FAILED', 'BLOCKED', 'UNTESTED'] as const
 const PAGE_SIZE = 20
 type SortField = 'code' | 'title' | 'severity' | 'status' | 'updatedAt'
 
@@ -27,6 +27,7 @@ export default function ListViewClient({ projectId }: Props) {
   const [showCreate, setShowCreate] = useState(searchParams.get('action') === 'new')
   const [editCase, setEditCase] = useState<TestCase | null>(null)
   const [showCreateFeature, setShowCreateFeature] = useState(false)
+  const [duplicatingCaseId, setDuplicatingCaseId] = useState<string | null>(null)
 
   // Build query string
   const qs = Object.entries(filters)
@@ -102,6 +103,30 @@ export default function ListViewClient({ projectId }: Props) {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a'); a.href = url; a.download = 'test-cases.csv'; a.click()
     URL.revokeObjectURL(url)
+  }
+
+  async function duplicateCase(testCase: TestCase) {
+    if (duplicatingCaseId) return
+    setDuplicatingCaseId(testCase.id)
+
+    try {
+      const res = await fetch(`/api/projects/${projectId}/cases/${testCase.id}/duplicate`, {
+        method: 'POST',
+      })
+      const json = await res.json().catch(() => ({}))
+
+      if (!res.ok) {
+        window.alert(json.error || 'Unable to duplicate test case')
+        return
+      }
+
+      setSelectedCase(null)
+      void mutate()
+    } catch {
+      window.alert('Unable to duplicate test case')
+    } finally {
+      setDuplicatingCaseId(null)
+    }
   }
 
   return (
@@ -308,13 +333,25 @@ export default function ListViewClient({ projectId }: Props) {
                         </td>
                         <td className="px-5 py-4 hidden xl:table-cell text-xs text-outline whitespace-nowrap">{formatRelativeTime(tc.updatedAt)}</td>
                         <td className="px-5 py-4">
-                          <button
-                            type="button"
-                            onClick={e => { e.stopPropagation(); setEditCase(tc) }}
-                            className="p-1.5 text-outline hover:text-primary hover:bg-primary-fixed/30 rounded-lg transition-all opacity-0 group-hover:opacity-100"
-                          >
-                            <span className="material-symbols-outlined text-sm">edit</span>
-                          </button>
+                          <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button
+                              type="button"
+                              onClick={e => { e.stopPropagation(); void duplicateCase(tc) }}
+                              disabled={duplicatingCaseId === tc.id}
+                              className="p-1.5 text-outline hover:text-primary hover:bg-primary-fixed/30 rounded-lg transition-all disabled:opacity-50"
+                              title="Duplicate test case"
+                            >
+                              <span className="material-symbols-outlined text-sm">content_copy</span>
+                            </button>
+                            <button
+                              type="button"
+                              onClick={e => { e.stopPropagation(); setEditCase(tc) }}
+                              className="p-1.5 text-outline hover:text-primary hover:bg-primary-fixed/30 rounded-lg transition-all"
+                              title="Edit test case"
+                            >
+                              <span className="material-symbols-outlined text-sm">edit</span>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     )
@@ -478,7 +515,15 @@ export default function ListViewClient({ projectId }: Props) {
               </div>
             )}
 
-            <div className="pt-4 border-t border-surface-container-high">
+            <div className="pt-4 border-t border-surface-container-high space-y-2">
+              <button
+                onClick={() => void duplicateCase(selectedCase)}
+                disabled={duplicatingCaseId === selectedCase.id}
+                className="w-full py-3 bg-white text-primary rounded-xl font-headline font-bold text-sm flex items-center justify-center gap-2 border border-outline/20 hover:border-primary/40 hover:bg-primary-fixed/20 active:scale-[0.98] transition-all disabled:opacity-50"
+              >
+                <span className="material-symbols-outlined text-sm">content_copy</span>
+                {duplicatingCaseId === selectedCase.id ? 'Duplicating...' : 'Duplicate Test Case'}
+              </button>
               <button
                 onClick={() => setEditCase(selectedCase)}
                 className="w-full py-3.5 bg-primary text-white rounded-xl font-headline font-bold text-sm flex items-center justify-center gap-2 shadow-primary hover:opacity-90 active:scale-[0.98] transition-all"

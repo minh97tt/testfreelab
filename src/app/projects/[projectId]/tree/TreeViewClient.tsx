@@ -36,7 +36,7 @@ const fetcher = (url: string) => fetch(url).then(r => r.json())
 // - wider parent/child distance horizontally
 const HORIZONTAL_GAP = 630
 const VERTICAL_GAP = 70
-const STATUS_FILTERS = ['', 'FAILED', 'IN_PROGRESS', 'UNTESTED', 'PASSED'] as const
+const STATUS_FILTERS = ['', 'FAILED', 'BLOCKED', 'UNTESTED', 'PASSED'] as const
 
 interface TreeData {
   tree: Folder[]
@@ -485,11 +485,10 @@ export default function TreeViewClient({
             setCreateCaseFolder(undefined)
             setLockCreateCaseFolder(false)
           }}
-          onCreated={(tc) => {
+          onCreated={() => {
             void mutate()
             setCreateCaseFolder(undefined)
             setLockCreateCaseFolder(false)
-            setSelectedCase(tc)
           }}
         />
       )}

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
-import { Prisma } from '@prisma/client';
+import { CaseStatus, Prisma } from '@prisma/client'
 
 type Params = { params: Promise<{ id: string; caseId: string }> }
 
@@ -70,7 +70,7 @@ export async function PATCH(req: NextRequest, { params }: Params) {
     actualResult: z.string().optional(),
     severity: z.enum(['CRITICAL', 'HIGH', 'MEDIUM', 'LOW']).optional(),
     type: z.enum(['MANUAL', 'AUTOMATED']).optional(),
-    status: z.enum(['UNTESTED', 'PASSED', 'FAILED', 'BLOCKED']).optional(),
+    status: z.nativeEnum(CaseStatus).optional(),
     folderId: z.string().min(1).optional(),
     archived: z.boolean().optional(),
     steps: z.array(z.object({

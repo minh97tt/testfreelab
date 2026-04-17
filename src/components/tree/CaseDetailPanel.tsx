@@ -31,6 +31,9 @@ export default function CaseDetailPanel({
     fetcher
   )
   const [showEditModal, setShowEditModal] = useState(false)
+  const [duplicating, setDuplicating] = useState(false)
+  const [updatingStatus, setUpdatingStatus] = useState<TestCase['status'] | null>(null)
+  const [statusError, setStatusError] = useState('')
 
   const tc = data?.data
   if (!tc) {
@@ -47,18 +50,58 @@ export default function CaseDetailPanel({
   // Last 7 results for history chart
   const history = (tc.results || []).slice(0, 7).reverse()
   const lastExecuted = (tc.results || []).find(
-    (result) => result.status === 'PASSED' || result.status === 'FAILED' || result.status === 'IN_PROGRESS'
+    (result) => result.status === 'PASSED' || result.status === 'FAILED' || result.status === 'BLOCKED'
   )?.executedAt
 
   async function updateStatus(status: TestCase['status']) {
-    if (readOnly) return
-    await fetch(`/api/projects/${projectId}/cases/${caseId}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status }),
-    })
-    mutate()
-    onUpdate()
+    if (readOnly || updatingStatus) return
+    setUpdatingStatus(status)
+    setStatusError('')
+
+    try {
+      const res = await fetch(`/api/projects/${projectId}/cases/${caseId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      })
+      const json = await res.json().catch(() => ({}))
+
+      if (!res.ok) {
+        setStatusError(json.error || 'Unable to update status')
+        return
+      }
+
+      await mutate()
+      onUpdate()
+    } catch {
+      setStatusError('Unable to update status')
+    } finally {
+      setUpdatingStatus(null)
+    }
+  }
+
+  async function duplicateCase() {
+    if (readOnly || duplicating) return
+    setDuplicating(true)
+
+    try {
+      const res = await fetch(`/api/projects/${projectId}/cases/${caseId}/duplicate`, {
+        method: 'POST',
+      })
+      const json = await res.json().catch(() => ({}))
+
+      if (!res.ok) {
+        window.alert(json.error || 'Unable to duplicate test case')
+        return
+      }
+
+      onUpdate()
+      onClose()
+    } catch {
+      window.alert('Unable to duplicate test case')
+    } finally {
+      setDuplicating(false)
+    }
   }
 
   return (
@@ -186,22 +229,27 @@ export default function CaseDetailPanel({
           <div>
             <h6 className="text-[11px] font-label font-bold text-outline uppercase tracking-wider mb-2">Quick Update</h6>
             <div className="grid grid-cols-2 gap-2">
-              {(['PASSED', 'FAILED', 'IN_PROGRESS', 'UNTESTED'] as const).map(s => (
+              {(['PASSED', 'FAILED', 'BLOCKED', 'UNTESTED'] as const).map(s => (
                 <button
                   key={s}
-                  onClick={() => updateStatus(s)}
+                  type="button"
+                  onClick={() => void updateStatus(s)}
+                  disabled={Boolean(updatingStatus)}
                   className={cn(
-                    'flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer',
+                    'flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer disabled:cursor-wait disabled:opacity-70',
                     tc.status === s
-                      ? `${statusConfig[s].bg} ${statusConfig[s].text} ring-2 ring-offset-1 ring-current`
-                      : 'bg-surface-container-low text-outline hover:bg-surface-container'
+                      ? `${statusConfig[s].bg} ${statusConfig[s].text} ring-1 ring-offset-1 ring-current`
+                      : 'bg-surface-container-low text-outline border-transparent hover:border-outline/15 hover:bg-surface-container'
                   )}
                 >
-                  <span className={cn('w-2 h-2 rounded-full', statusConfig[s].dot)} />
-                  {statusConfig[s].label}
+                  <span className={cn('w-2 h-2 rounded-full', statusConfig[s].dot, updatingStatus === s && 'animate-pulse')} />
+                  {updatingStatus === s ? 'Updating...' : statusConfig[s].label}
                 </button>
               ))}
             </div>
+            {statusError && (
+              <p className="mt-2 text-xs font-semibold text-error">{statusError}</p>
+            )}
           </div>
         )}
 
@@ -224,15 +272,29 @@ export default function CaseDetailPanel({
 
       {!readOnly && (
         <div className="p-5 flex-shrink-0 bg-slate-50/50 border-t border-slate-100 flex flex-col gap-2">
-          <div className="flex gap-2">
+          <div className="grid grid-cols-3 gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="bg-white text-slate-700 py-2.5 rounded-xl text-sm font-bold border border-slate-300 hover:bg-slate-50 transition-all"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={() => void duplicateCase()}
+              disabled={duplicating}
+              className="bg-white text-primary py-2.5 rounded-xl text-sm font-bold border border-primary/25 hover:bg-primary-fixed/20 transition-all disabled:opacity-50"
+            >
+              {duplicating ? 'Duplicating...' : 'Duplicate'}
+            </button>
             <button
               type="button"
               onClick={() => setShowEditModal(true)}
-              className="flex-1 bg-white text-slate-600 py-2.5 rounded-xl text-sm font-bold border border-slate-100 hover:bg-slate-50 transition-all"
+              className="bg-primary text-white py-2.5 rounded-xl text-sm font-bold shadow-primary hover:opacity-90 transition-all"
             >
               Edit
             </button>
-            <button className="flex-1 bg-white text-slate-600 py-2.5 rounded-xl text-sm font-bold border border-slate-100 hover:bg-slate-50 transition-all">Share</button>
           </div>
         </div>
       )}

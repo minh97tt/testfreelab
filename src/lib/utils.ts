@@ -67,7 +67,7 @@ export const statusConfig: Record<CaseStatus, { label: string; bg: string; text:
   PASSED:      { label: 'Passed',      bg: 'bg-emerald-100', text: 'text-emerald-700', dot: 'bg-emerald-500', icon: 'check_circle' },
   FAILED:      { label: 'Failed',      bg: 'bg-pink-100',    text: 'text-pink-700',    dot: 'bg-pink-500',    icon: 'cancel' },
   UNTESTED:    { label: 'Untested',    bg: 'bg-slate-100',   text: 'text-slate-500',   dot: 'bg-slate-300',   icon: 'radio_button_unchecked' },
-  IN_PROGRESS: { label: 'In Progress', bg: 'bg-amber-100',   text: 'text-amber-700',   dot: 'bg-amber-400',   icon: 'pending' },
+  BLOCKED:     { label: 'Blocked',     bg: 'bg-amber-100',   text: 'text-amber-700',   dot: 'bg-amber-400',   icon: 'block' },
 }
 
 export const runStatusConfig: Record<RunStatus, { label: string; bg: string; text: string; icon: string }> = {
