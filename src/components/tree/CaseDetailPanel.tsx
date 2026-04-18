@@ -139,6 +139,34 @@ export default function CaseDetailPanel({
 
       {/* Scrollable body */}
       <div className="flex-1 overflow-y-auto scrollbar-thin p-6 space-y-6">
+        {!readOnly && (
+          <div>
+            <h6 className="text-[11px] font-label font-bold text-outline uppercase tracking-wider mb-2">Quick Update</h6>
+            <div className="grid grid-cols-2 gap-2">
+              {(['PASSED', 'FAILED', 'BLOCKED', 'UNTESTED'] as const).map(s => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => void updateStatus(s)}
+                  disabled={Boolean(updatingStatus)}
+                  className={cn(
+                    'flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer disabled:cursor-wait disabled:opacity-70',
+                    tc.status === s
+                      ? `${statusConfig[s].bg} ${statusConfig[s].text} ring-1 ring-offset-1 ring-current`
+                      : 'bg-surface-container-low text-outline border-transparent hover:border-outline/15 hover:bg-surface-container'
+                  )}
+                >
+                  <span className={cn('w-2 h-2 rounded-full', statusConfig[s].dot, updatingStatus === s && 'animate-pulse')} />
+                  {updatingStatus === s ? 'Updating...' : statusConfig[s].label}
+                </button>
+              ))}
+            </div>
+            {statusError && (
+              <p className="mt-2 text-xs font-semibold text-error">{statusError}</p>
+            )}
+          </div>
+        )}
+
         {(tc.description || tc.preconditions || tc.testData || tc.finalExpectation || tc.actualResult) && (
           <div className="space-y-3">
             {tc.description && (
@@ -216,34 +244,6 @@ export default function CaseDetailPanel({
               <span className="text-[10px] text-outline font-label">Oldest</span>
               <span className="text-[10px] text-outline font-label">Latest</span>
             </div>
-          </div>
-        )}
-
-        {!readOnly && (
-          <div>
-            <h6 className="text-[11px] font-label font-bold text-outline uppercase tracking-wider mb-2">Quick Update</h6>
-            <div className="grid grid-cols-2 gap-2">
-              {(['PASSED', 'FAILED', 'BLOCKED', 'UNTESTED'] as const).map(s => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => void updateStatus(s)}
-                  disabled={Boolean(updatingStatus)}
-                  className={cn(
-                    'flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer disabled:cursor-wait disabled:opacity-70',
-                    tc.status === s
-                      ? `${statusConfig[s].bg} ${statusConfig[s].text} ring-1 ring-offset-1 ring-current`
-                      : 'bg-surface-container-low text-outline border-transparent hover:border-outline/15 hover:bg-surface-container'
-                  )}
-                >
-                  <span className={cn('w-2 h-2 rounded-full', statusConfig[s].dot, updatingStatus === s && 'animate-pulse')} />
-                  {updatingStatus === s ? 'Updating...' : statusConfig[s].label}
-                </button>
-              ))}
-            </div>
-            {statusError && (
-              <p className="mt-2 text-xs font-semibold text-error">{statusError}</p>
-            )}
           </div>
         )}
 

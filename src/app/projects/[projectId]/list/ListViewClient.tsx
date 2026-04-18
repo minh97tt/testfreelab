@@ -3,11 +3,12 @@ import { Fragment, useState, useEffect, useRef, type ChangeEvent } from 'react'
 import useSWR from 'swr'
 import { useSearchParams } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
-import { cn, severityConfig, statusConfig, formatRelativeTime, formatDateTime } from '@/lib/utils'
+import { cn, severityConfig, statusConfig, formatRelativeTime } from '@/lib/utils'
 import type { TestCase, CaseFilters, Folder } from '@/types'
 import CreateCaseModal from '@/components/modals/CreateCaseModal'
 import EditCaseModal from '@/components/modals/EditCaseModal'
 import CreateFolderModal from '@/components/modals/CreateFolderModal'
+import CaseDetailPanel from '@/components/tree/CaseDetailPanel'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -508,136 +509,37 @@ export default function ListViewClient({ projectId }: Props) {
         )}
       </div>
 
-      {/* Right detail panel */}
       <AnimatePresence>
         {selectedCase && (
-          <motion.aside
-            initial={{ x: 400, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 400, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="w-80 xl:w-96 flex-shrink-0 bg-white border-l border-surface-container-high h-full overflow-y-auto scrollbar-thin p-6"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            className="fixed inset-0 z-[120] bg-primary/20 backdrop-blur-sm p-4 md:p-6 flex items-center justify-center"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setSelectedCase(null)
+            }}
           >
-            <div className="flex items-center justify-between mb-6">
-              <span className="font-label font-black text-xs uppercase tracking-widest text-primary px-3 py-1 bg-primary-fixed rounded-full">Selected Case</span>
-              <button onClick={() => setSelectedCase(null)} className="text-outline hover:text-on-surface">
-                <span className="material-symbols-outlined">close</span>
-              </button>
-            </div>
-
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className="font-label text-[10px] font-black text-outline uppercase tracking-widest">{selectedCase.code}</span>
-                {selectedCase.severity === 'CRITICAL' && <span className="material-symbols-outlined text-error text-sm">local_fire_department</span>}
-              </div>
-              <h2 className="font-headline font-black text-xl tracking-tight leading-tight mb-4">{selectedCase.title}</h2>
-
-              {selectedCase.description && (
-                <p className="text-sm text-outline mb-4">{selectedCase.description}</p>
-              )}
-
-              {selectedCase.preconditions && (
-                <div className="mb-4 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/20">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1.5">Preconditions</p>
-                  <p className="text-sm text-on-surface whitespace-pre-wrap">{selectedCase.preconditions}</p>
-                </div>
-              )}
-
-              {selectedCase.testData && (
-                <div className="mb-4 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/20">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1.5">Test Data</p>
-                  <p className="text-sm text-on-surface whitespace-pre-wrap">{selectedCase.testData}</p>
-                </div>
-              )}
-
-              {selectedCase.finalExpectation && (
-                <div className="mb-4 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/20">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1.5">Expected Result</p>
-                  <p className="text-sm text-on-surface whitespace-pre-wrap">{selectedCase.finalExpectation}</p>
-                </div>
-              )}
-
-              {selectedCase.actualResult && (
-                <div className="mb-4 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/20">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1.5">Actual Result</p>
-                  <p className="text-sm text-on-surface whitespace-pre-wrap">{selectedCase.actualResult}</p>
-                </div>
-              )}
-
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-surface-container-low p-3 rounded-xl">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1">Status</p>
-                  <p className={cn('font-headline text-sm font-bold', statusConfig[selectedCase.status]?.text)}>
-                    {statusConfig[selectedCase.status]?.label}
-                  </p>
-                </div>
-                <div className="bg-surface-container-low p-3 rounded-xl">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1">Severity</p>
-                  <p className={cn('font-headline text-sm font-bold', severityConfig[selectedCase.severity]?.text)}>
-                    {severityConfig[selectedCase.severity]?.label}
-                  </p>
-                </div>
-                {selectedCase.folder && (
-                  <div className="bg-surface-container-low p-3 rounded-xl col-span-2">
-                    <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-1">Feature</p>
-                    <p className="font-headline text-sm font-bold text-violet-700 flex items-center gap-1">
-                      <span className="material-symbols-outlined text-sm">folder</span>{selectedCase.folder.name}
-                    </p>
-                  </div>
-                )}
-                <div className="bg-surface-container-low p-3 rounded-xl col-span-2">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-outline mb-2">Timeline</p>
-                  <div className="space-y-1.5">
-                    <p className="text-xs text-outline">
-                      Created: <span className="font-semibold text-on-surface">{formatDateTime(selectedCase.createdAt)}</span>
-                    </p>
-                    <p className="text-xs text-outline">
-                      Modified: <span className="font-semibold text-on-surface">{formatDateTime(selectedCase.updatedAt)}</span>
-                    </p>
-                    <p className="text-xs text-outline">
-                      Executed: <span className="font-semibold text-on-surface">{selectedCase.lastExecutedAt ? formatDateTime(selectedCase.lastExecutedAt) : 'Not executed yet'}</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Steps preview */}
-            {selectedCase.steps && selectedCase.steps.length > 0 && (
-              <div className="mb-6">
-                <h3 className="font-headline text-xs font-black uppercase tracking-[0.2em] text-outline mb-3">Steps</h3>
-                <ol className="space-y-2">
-                  {selectedCase.steps.slice(0, 5).map((step, i) => (
-                    <li key={step.id} className="flex gap-3 text-sm">
-                      <span className="font-label font-bold text-primary text-xs w-5 flex-shrink-0 mt-0.5">{i + 1}</span>
-                      <p className="text-on-surface">{step.action}</p>
-                    </li>
-                  ))}
-                  {selectedCase.steps.length > 5 && (
-                    <p className="text-xs text-outline pl-8">+{selectedCase.steps.length - 5} more steps</p>
-                  )}
-                </ol>
-              </div>
-            )}
-
-            <div className="pt-4 border-t border-surface-container-high space-y-2">
-              <button
-                onClick={() => void duplicateCase(selectedCase)}
-                disabled={duplicatingCaseId === selectedCase.id}
-                className="w-full py-3 bg-white text-primary rounded-xl font-headline font-bold text-sm flex items-center justify-center gap-2 border border-outline/20 hover:border-primary/40 hover:bg-primary-fixed/20 active:scale-[0.98] transition-all disabled:opacity-50"
-              >
-                <span className="material-symbols-outlined text-sm">content_copy</span>
-                {duplicatingCaseId === selectedCase.id ? 'Duplicating...' : 'Duplicate Test Case'}
-              </button>
-              <button
-                onClick={() => setEditCase(selectedCase)}
-                className="w-full py-3.5 bg-primary text-white rounded-xl font-headline font-bold text-sm flex items-center justify-center gap-2 shadow-primary hover:opacity-90 active:scale-[0.98] transition-all"
-              >
-                <span className="material-symbols-outlined text-sm">edit</span>
-                Edit Test Case
-              </button>
-            </div>
-          </motion.aside>
+            <motion.div
+              initial={{ y: 12, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 12, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="w-full max-w-3xl h-[88vh] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <CaseDetailPanel
+                projectId={projectId}
+                caseId={selectedCase.id}
+                featureRootId={filters.folderId || undefined}
+                onClose={() => setSelectedCase(null)}
+                onUpdate={() => {
+                  void mutate()
+                  void mutateFolders()
+                }}
+              />
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
 
