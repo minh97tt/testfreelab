@@ -1,5 +1,5 @@
 'use client'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect, useRef, type ChangeEvent } from 'react'
 import useSWR from 'swr'
 import { useSearchParams } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -15,6 +15,15 @@ const SEVERITIES = ['', 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'] as const
 const STATUSES = ['', 'PASSED', 'FAILED', 'BLOCKED', 'UNTESTED'] as const
 const PAGE_SIZE = 20
 type SortField = 'code' | 'title' | 'severity' | 'status' | 'updatedAt'
+type ExcelImportSummary = {
+  createdCases: number
+  deletedCases: number
+  createdFolders: string[]
+  skippedCases: number
+  totalExtracted: number
+  skipped: { sheet: string; reason: string }[]
+  sheets: { sheet: string; total: number; importable: number }[]
+}
 
 interface Props { projectId: string }
 
@@ -28,6 +37,10 @@ export default function ListViewClient({ projectId }: Props) {
   const [editCase, setEditCase] = useState<TestCase | null>(null)
   const [showCreateFeature, setShowCreateFeature] = useState(false)
   const [duplicatingCaseId, setDuplicatingCaseId] = useState<string | null>(null)
+  const [importingExcel, setImportingExcel] = useState(false)
+  const [importSummary, setImportSummary] = useState<ExcelImportSummary | null>(null)
+  const [importError, setImportError] = useState('')
+  const excelInputRef = useRef<HTMLInputElement | null>(null)
 
   // Build query string
   const qs = Object.entries(filters)
@@ -129,6 +142,43 @@ export default function ListViewClient({ projectId }: Props) {
     }
   }
 
+  async function handleExcelImport(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file || importingExcel) return
+
+    setImportingExcel(true)
+    setImportError('')
+    setImportSummary(null)
+
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('replace', 'true')
+      formData.append('rootFolderName', 'Quotation')
+
+      const res = await fetch(`/api/projects/${projectId}/imports/excel`, {
+        method: 'POST',
+        body: formData,
+      })
+      const json = await res.json().catch(() => ({}))
+
+      if (!res.ok) {
+        setImportError(json.error || 'Unable to import Excel file')
+        return
+      }
+
+      setImportSummary(json.data)
+      setFilters(f => ({ ...f, page: 1 }))
+      void mutate()
+      void mutateFolders()
+    } catch {
+      setImportError('Unable to import Excel file')
+    } finally {
+      setImportingExcel(false)
+    }
+  }
+
   return (
     <div className="flex flex-1 overflow-hidden">
       {/* Main content */}
@@ -143,6 +193,22 @@ export default function ListViewClient({ projectId }: Props) {
             </p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
+            <input
+              ref={excelInputRef}
+              type="file"
+              accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+              className="hidden"
+              onChange={handleExcelImport}
+            />
+            <button
+              onClick={() => excelInputRef.current?.click()}
+              disabled={importingExcel}
+              className="flex items-center gap-2 bg-white text-primary border border-outline/20 hover:border-primary/40 px-4 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              title="Import Excel and replace matching Quotation sheet folders"
+            >
+              <span className={cn('material-symbols-outlined text-lg', importingExcel && 'animate-pulse')}>upload_file</span>
+              {importingExcel ? 'Importing...' : 'Import excel'}
+            </button>
             <button
               onClick={() => setShowCreateFeature(true)}
               className="flex items-center gap-2 bg-white text-primary border border-outline/20 hover:border-primary/40 px-4 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:shadow-md transition-all"
@@ -160,6 +226,45 @@ export default function ListViewClient({ projectId }: Props) {
             </button>
           </div>
         </div>
+
+        {(importingExcel || importSummary || importError) && (
+          <div className={cn(
+            'mb-6 flex items-start justify-between gap-4 rounded-xl px-4 py-3 ring-1',
+            importError
+              ? 'bg-red-50 text-red-700 ring-red-100'
+              : 'bg-emerald-50 text-emerald-800 ring-emerald-100'
+          )}>
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-lg mt-0.5">
+                {importError ? 'error' : importingExcel ? 'hourglass_empty' : 'check_circle'}
+              </span>
+              <div>
+                <p className="text-sm font-black">
+                  {importError ? 'Import failed' : importingExcel ? 'Importing Excel...' : 'Excel imported'}
+                </p>
+                {importError && <p className="text-sm mt-0.5">{importError}</p>}
+                {importSummary && (
+                  <p className="text-sm mt-0.5">
+                    Created {importSummary.createdCases} test cases
+                    {importSummary.deletedCases > 0 ? `, replaced ${importSummary.deletedCases}` : ''}
+                    {importSummary.createdFolders.length > 0 ? `, added ${importSummary.createdFolders.length} folders` : ''}.
+                    {importSummary.skipped.length > 0 ? ` Skipped ${importSummary.skipped.length} sheets.` : ''}
+                  </p>
+                )}
+              </div>
+            </div>
+            {!importingExcel && (
+              <button
+                type="button"
+                onClick={() => { setImportSummary(null); setImportError('') }}
+                className="rounded-lg p-1 hover:bg-white/60 transition-colors"
+                aria-label="Dismiss import message"
+              >
+                <span className="material-symbols-outlined text-lg">close</span>
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Filters */}
         <div className="flex flex-wrap items-center gap-3 mb-6">

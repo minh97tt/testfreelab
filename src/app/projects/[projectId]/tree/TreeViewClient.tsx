@@ -37,6 +37,11 @@ const fetcher = (url: string) => fetch(url).then(r => r.json())
 const HORIZONTAL_GAP = 630
 const VERTICAL_GAP = 70
 const STATUS_FILTERS = ['', 'FAILED', 'BLOCKED', 'UNTESTED', 'PASSED'] as const
+type StatusFilter = (typeof STATUS_FILTERS)[number]
+
+function parseStatusFilter(value: string | null): StatusFilter {
+  return STATUS_FILTERS.includes(value as StatusFilter) ? (value as StatusFilter) : ''
+}
 
 interface TreeData {
   tree: Folder[]
@@ -117,7 +122,7 @@ export default function TreeViewClient({
   const [parentFolderId, setParentFolderId] = useState<string | null>(null)
   const [featureScopeId, setFeatureScopeId] = useState(initialFeatureId)
   const [shareLoading, setShareLoading] = useState(false)
-  const [statusFilter, setStatusFilter] = useState<(typeof STATUS_FILTERS)[number]>('')
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>(() => parseStatusFilter(searchParams.get('status')))
 
   const tree = initialData || data?.data
   const featureOptions = (tree?.tree || []).map((folder) => ({ id: folder.id, name: folder.name }))
@@ -130,6 +135,7 @@ export default function TreeViewClient({
   const createCaseFolderOptions = activeFeature ? flattenFolderOptions([activeFeature]) : []
 
   const featureQuery = searchParams.get('feature') || ''
+  const statusQuery = searchParams.get('status') || ''
 
   useEffect(() => {
     if (lockFeatureSelection) return
@@ -163,6 +169,11 @@ export default function TreeViewClient({
     setFeatureScopeId('')
   }, [featureScopeId, scopedFeature, searchParams, router, pathname, tree, lockFeatureSelection])
 
+  useEffect(() => {
+    const nextStatus = parseStatusFilter(statusQuery)
+    setStatusFilter((current) => current === nextStatus ? current : nextStatus)
+  }, [statusQuery])
+
   function changeFeatureScope(nextFeatureId: string) {
     setFeatureScopeId(nextFeatureId)
     setSelectedCase(null)
@@ -177,6 +188,20 @@ export default function TreeViewClient({
       })
     } else {
       params.delete('feature')
+    }
+
+    router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`, { scroll: false })
+  }
+
+  function changeStatusFilter(nextStatus: StatusFilter) {
+    setStatusFilter(nextStatus)
+    setSelectedCase(null)
+
+    const params = new URLSearchParams(searchParams.toString())
+    if (nextStatus) {
+      params.set('status', nextStatus)
+    } else {
+      params.delete('status')
     }
 
     router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`, { scroll: false })
@@ -222,13 +247,15 @@ export default function TreeViewClient({
         return
       }
 
-      const shareUrl = json.data.shareUrl as string
+      const shareUrl = new URL(json.data.shareUrl as string)
+      if (statusFilter) shareUrl.searchParams.set('status', statusFilter)
+      const shareUrlText = shareUrl.toString()
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(shareUrl)
+        await navigator.clipboard.writeText(shareUrlText)
         window.alert('Share link copied to clipboard')
         return
       }
-      window.prompt('Copy share link', shareUrl)
+      window.prompt('Copy share link', shareUrlText)
     } catch {
       window.alert('Unable to create share link')
     } finally {
@@ -367,8 +394,7 @@ export default function TreeViewClient({
             <select
               value={statusFilter}
               onChange={(e) => {
-                setStatusFilter(e.target.value as (typeof STATUS_FILTERS)[number])
-                setSelectedCase(null)
+                changeStatusFilter(parseStatusFilter(e.target.value))
               }}
               className="appearance-none bg-white border border-outline/20 rounded-xl px-3 py-2 pr-10 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary/20 outline-none"
             >
@@ -906,7 +932,7 @@ function findFolderById(folders: Folder[], id: string): Folder | null {
 
 function filterFoldersByStatus(
   folders: Folder[],
-  status: (typeof STATUS_FILTERS)[number]
+  status: StatusFilter
 ): Folder[] {
   if (!status) return folders
 

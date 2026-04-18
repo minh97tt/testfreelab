@@ -135,41 +135,35 @@ export default function CaseDetailPanel({
           )}
         </div>
 
-        {tc.description && (
-          <p className="text-sm text-outline leading-relaxed">{tc.description}</p>
-        )}
-
-        {tc.preconditions && (
-          <div className="mt-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/20">
-            <p className="text-[10px] font-label font-bold text-outline uppercase tracking-wider mb-1.5">Preconditions</p>
-            <p className="text-sm text-on-surface whitespace-pre-wrap">{tc.preconditions}</p>
-          </div>
-        )}
-
-        {tc.testData && (
-          <div className="mt-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/20">
-            <p className="text-[10px] font-label font-bold text-outline uppercase tracking-wider mb-1.5">Test Data</p>
-            <p className="text-sm text-on-surface whitespace-pre-wrap">{tc.testData}</p>
-          </div>
-        )}
-
-        {tc.finalExpectation && (
-          <div className="mt-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/20">
-            <p className="text-[10px] font-label font-bold text-outline uppercase tracking-wider mb-1.5">Expected Result</p>
-            <p className="text-sm text-on-surface whitespace-pre-wrap">{tc.finalExpectation}</p>
-          </div>
-        )}
-
-        {tc.actualResult && (
-          <div className="mt-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/20">
-            <p className="text-[10px] font-label font-bold text-outline uppercase tracking-wider mb-1.5">Actual Result</p>
-            <p className="text-sm text-on-surface whitespace-pre-wrap">{tc.actualResult}</p>
-          </div>
-        )}
       </div>
 
       {/* Scrollable body */}
       <div className="flex-1 overflow-y-auto scrollbar-thin p-6 space-y-6">
+        {(tc.description || tc.preconditions || tc.testData || tc.finalExpectation || tc.actualResult) && (
+          <div className="space-y-3">
+            {tc.description && (
+              <p className="text-sm text-outline leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
+                {tc.description}
+              </p>
+            )}
+
+            {tc.preconditions && (
+              <DetailTextBlock label="Preconditions" value={tc.preconditions} />
+            )}
+
+            {tc.testData && (
+              <DetailTextBlock label="Test Data" value={tc.testData} />
+            )}
+
+            {tc.finalExpectation && (
+              <DetailTextBlock label="Expected Result" value={tc.finalExpectation} />
+            )}
+
+            {tc.actualResult && (
+              <DetailTextBlock label="Actual Result" value={tc.actualResult} />
+            )}
+          </div>
+        )}
 
         {/* Steps */}
         {tc.steps && tc.steps.length > 0 && (
@@ -312,6 +306,15 @@ export default function CaseDetailPanel({
           }}
         />
       )}
+    </div>
+  )
+}
+
+function DetailTextBlock({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="p-3 rounded-xl bg-surface-container-low border border-outline-variant/20">
+      <p className="text-[10px] font-label font-bold text-outline uppercase tracking-wider mb-1.5">{label}</p>
+      <p className="text-sm text-on-surface whitespace-pre-wrap break-words [overflow-wrap:anywhere]">{value}</p>
     </div>
   )
 }
