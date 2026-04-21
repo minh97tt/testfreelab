@@ -41,8 +41,8 @@ export async function POST(req: NextRequest, { params }: Params) {
     }
 
     const replace = formData.get('replace') !== 'false'
-    const rootFolderName = cleanFolderName(formData.get('rootFolderName')) || 'Quotation_Create'
     const sheetName = cleanFolderName(formData.get('sheetName')) || 'CSV Import'
+    const folderId = cleanFolderId(formData.get('folderId'))
 
     const tempDir = join(tmpdir(), 'testtree-imports')
     await mkdir(tempDir, { recursive: true })
@@ -54,9 +54,19 @@ export async function POST(req: NextRequest, { params }: Params) {
       return NextResponse.json({ error: 'No valid test cases found in this CSV file' }, { status: 400 })
     }
 
+    if (folderId) {
+      const folder = await prisma.folder.findFirst({
+        where: { id: folderId, projectId },
+        select: { id: true },
+      })
+      if (!folder) {
+        return NextResponse.json({ error: 'Folder not found' }, { status: 404 })
+      }
+    }
+
     const result = await importCsvCases({
       projectId,
-      rootFolderName,
+      folderId,
       replace,
       extracted,
     })
@@ -65,7 +75,6 @@ export async function POST(req: NextRequest, { params }: Params) {
       data: {
         ...result,
         replace,
-        rootFolderName,
         totalExtracted: extracted.length,
       },
     })
@@ -81,32 +90,29 @@ export async function POST(req: NextRequest, { params }: Params) {
 
 async function importCsvCases({
   projectId,
-  rootFolderName,
+  folderId,
   replace,
   extracted,
 }: {
   projectId: string
-  rootFolderName: string
+  folderId: string | null
   replace: boolean
   extracted: CsvTestCase[]
 }) {
   return prisma.$transaction(async (tx) => {
-    const rootFolder = await getOrCreateFolder(tx, {
-      projectId,
-      name: rootFolderName,
-      parentId: null,
-    })
     const sheetNames = [...new Set(extracted.map((testCase) => testCase.sheetName))]
+    const replaceWhere: Prisma.TestCaseWhereInput = folderId
+      ? { projectId, folderId }
+      : {
+          projectId,
+          folder: {
+            is: {
+              parentId: null,
+              name: { in: sheetNames },
+            },
+          },
+        }
 
-    const replaceWhere: Prisma.TestCaseWhereInput = {
-      projectId,
-      folder: {
-        is: {
-          parentId: rootFolder.id,
-          name: { in: sheetNames },
-        },
-      },
-    }
     const replacingCases = replace
       ? await tx.testCase.findMany({
           where: replaceWhere,
@@ -129,19 +135,27 @@ async function importCsvCases({
 
     const existingCaseKeys = replace
       ? new Set<string>()
-      : await getExistingCaseKeys(tx, projectId)
-    const importable = extracted.filter((testCase) => !existingCaseKeys.has(caseKey(testCase)))
+      : await getExistingCaseKeys(tx, projectId, folderId)
+    const importable = extracted.filter((testCase) => {
+      const key = folderId ? caseKeyWithoutFolder(testCase) : caseKey(testCase)
+      return !existingCaseKeys.has(key)
+    })
+
     const folderCache = new Map<string, string>()
     const createdFolders: string[] = []
 
-    for (const sheetName of sheetNames) {
-      const folder = await getOrCreateFolder(tx, {
-        projectId,
-        name: sheetName,
-        parentId: rootFolder.id,
-      })
-      folderCache.set(sheetName, folder.id)
-      if (folder.created) createdFolders.push(sheetName)
+    if (folderId) {
+      for (const sheetName of sheetNames) folderCache.set(sheetName, folderId)
+    } else {
+      for (const sheetName of sheetNames) {
+        const folder = await getOrCreateFolder(tx, {
+          projectId,
+          name: sheetName,
+          parentId: null,
+        })
+        folderCache.set(sheetName, folder.id)
+        if (folder.created) createdFolders.push(sheetName)
+      }
     }
 
     let nextCodeNumber = await getNextCodeNumber(tx, projectId)
@@ -211,9 +225,9 @@ async function getOrCreateFolder(
   return { id: folder.id, created: true }
 }
 
-async function getExistingCaseKeys(tx: Transaction, projectId: string) {
+async function getExistingCaseKeys(tx: Transaction, projectId: string, folderId: string | null) {
   const existingCases = await tx.testCase.findMany({
-    where: { projectId },
+    where: folderId ? { projectId, folderId } : { projectId },
     select: {
       title: true,
       preconditions: true,
@@ -222,7 +236,7 @@ async function getExistingCaseKeys(tx: Transaction, projectId: string) {
     },
   })
 
-  return new Set(existingCases.map(caseKey))
+  return new Set(existingCases.map((testCase) => folderId ? caseKeyWithoutFolder(testCase) : caseKey(testCase)))
 }
 
 async function getNextCodeNumber(tx: Transaction, projectId: string) {
@@ -269,6 +283,18 @@ function caseKey(testCase: {
   ].join('\u001f')
 }
 
+function caseKeyWithoutFolder(testCase: {
+  title: string
+  preconditions: string | null
+  finalExpectation: string | null
+}) {
+  return [
+    testCase.title,
+    testCase.preconditions || '',
+    testCase.finalExpectation || '',
+  ].join('\u001f')
+}
+
 function formatTCCode(number: number) {
   return `TC-${String(number).padStart(4, '0')}`
 }
@@ -289,4 +315,8 @@ function safeFileName(name: string) {
 
 function cleanFolderName(value: FormDataEntryValue | null) {
   return typeof value === 'string' ? value.trim() : ''
+}
+
+function cleanFolderId(value: FormDataEntryValue | null) {
+  return typeof value === 'string' && value.trim() ? value.trim() : null
 }
