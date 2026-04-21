@@ -39,9 +39,11 @@ export default function ListViewClient({ projectId }: Props) {
   const [showCreateFeature, setShowCreateFeature] = useState(false)
   const [duplicatingCaseId, setDuplicatingCaseId] = useState<string | null>(null)
   const [importingExcel, setImportingExcel] = useState(false)
+  const [importingCsv, setImportingCsv] = useState(false)
   const [importSummary, setImportSummary] = useState<ExcelImportSummary | null>(null)
   const [importError, setImportError] = useState('')
   const excelInputRef = useRef<HTMLInputElement | null>(null)
+  const csvInputRef = useRef<HTMLInputElement | null>(null)
 
   // Build query string
   const qs = Object.entries(filters)
@@ -180,6 +182,44 @@ export default function ListViewClient({ projectId }: Props) {
     }
   }
 
+  async function handleCsvImport(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file || importingCsv) return
+
+    setImportingCsv(true)
+    setImportError('')
+    setImportSummary(null)
+
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('replace', 'true')
+      formData.append('rootFolderName', 'Quotation_Create')
+      formData.append('sheetName', 'Quotation_Create')
+
+      const res = await fetch(`/api/projects/${projectId}/imports/csv`, {
+        method: 'POST',
+        body: formData,
+      })
+      const json = await res.json().catch(() => ({}))
+
+      if (!res.ok) {
+        setImportError(json.error || 'Unable to import CSV file')
+        return
+      }
+
+      setImportSummary(json.data)
+      setFilters(f => ({ ...f, page: 1 }))
+      void mutate()
+      void mutateFolders()
+    } catch {
+      setImportError('Unable to import CSV file')
+    } finally {
+      setImportingCsv(false)
+    }
+  }
+
   return (
     <div className="flex flex-1 overflow-hidden">
       {/* Main content */}
@@ -201,6 +241,13 @@ export default function ListViewClient({ projectId }: Props) {
               className="hidden"
               onChange={handleExcelImport}
             />
+            <input
+              ref={csvInputRef}
+              type="file"
+              accept=".csv,text/csv"
+              className="hidden"
+              onChange={handleCsvImport}
+            />
             <button
               onClick={() => excelInputRef.current?.click()}
               disabled={importingExcel}
@@ -209,6 +256,15 @@ export default function ListViewClient({ projectId }: Props) {
             >
               <span className={cn('material-symbols-outlined text-lg', importingExcel && 'animate-pulse')}>upload_file</span>
               {importingExcel ? 'Importing...' : 'Import excel'}
+            </button>
+            <button
+              onClick={() => csvInputRef.current?.click()}
+              disabled={importingCsv}
+              className="flex items-center gap-2 bg-white text-primary border border-outline/20 hover:border-primary/40 px-4 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              title="Import CSV and replace matching Quotation_Create folder"
+            >
+              <span className={cn('material-symbols-outlined text-lg', importingCsv && 'animate-pulse')}>upload_file</span>
+              {importingCsv ? 'Importing...' : 'Import csv'}
             </button>
             <button
               onClick={() => setShowCreateFeature(true)}
@@ -228,7 +284,7 @@ export default function ListViewClient({ projectId }: Props) {
           </div>
         </div>
 
-        {(importingExcel || importSummary || importError) && (
+        {(importingExcel || importingCsv || importSummary || importError) && (
           <div className={cn(
             'mb-6 flex items-start justify-between gap-4 rounded-xl px-4 py-3 ring-1',
             importError
@@ -237,11 +293,11 @@ export default function ListViewClient({ projectId }: Props) {
           )}>
             <div className="flex items-start gap-3">
               <span className="material-symbols-outlined text-lg mt-0.5">
-                {importError ? 'error' : importingExcel ? 'hourglass_empty' : 'check_circle'}
+                {importError ? 'error' : (importingExcel || importingCsv) ? 'hourglass_empty' : 'check_circle'}
               </span>
               <div>
                 <p className="text-sm font-black">
-                  {importError ? 'Import failed' : importingExcel ? 'Importing Excel...' : 'Excel imported'}
+                  {importError ? 'Import failed' : (importingExcel || importingCsv) ? 'Importing file...' : 'Import completed'}
                 </p>
                 {importError && <p className="text-sm mt-0.5">{importError}</p>}
                 {importSummary && (
@@ -254,7 +310,7 @@ export default function ListViewClient({ projectId }: Props) {
                 )}
               </div>
             </div>
-            {!importingExcel && (
+            {!importingExcel && !importingCsv && (
               <button
                 type="button"
                 onClick={() => { setImportSummary(null); setImportError('') }}

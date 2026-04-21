@@ -1,0 +1,2638 @@
+﻿Back,,,,Chrome,Firefox,IE,,,,,,
+Screen,,"Báo giá
+Create",Passed,266,0,0,,,,,,
+Create Date,,7-Apr-2026,Failed,97,0,0,,,,,,
+Creator,,NGUYEN THI MY DUYEN,Not Tested ,97,0,0,,,,,,
+Last Update,,7-Apr-2026,Cancelled,0,0,0,,,,,,
+,,,,,,,Results browser,,,,,
+TestCase ID, Category ,Test Execution,Test Inputs,Expected,Create Date,Modify Date,Chrome,Firefox,IE,Excuted Date,Excuted by,Notes
+ID_001," GUI ""THÊM MỚI""
+(Graphical User Interface) ",Kiểm tra mở màn hình,"1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Mở thành công
+- Font Lexend
+- Route: https://admin-qc.digiretail.myminds.net/objects/list/quotation
+- Màn hình dùng đề xuất giá và điều kiện bán hàng cho khách trước khi chốt đơn, làm cơ sở đàm phán và chuyển thành đơn hàng khi được duyệt",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_002,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 1 ""Thông tin chung""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
++ Gồm 24 field:
+     ++ Hàng 1: ""Mã báo giá"", ""Tên báo giá"", ""Người phụ trách"", ""Số báo giá""
+     ++ Hàng 2: ""Loại báo giá"", ""Khách hàng"", ""Tiền tệ"", ""Bảng giá""
+     ++ Hàng 3: ""Số thập phân của giá"", ""Sale phụ trách"", ""Ngày báo giá"", ""Tạo hợp đồng""
+     ++ Hàng 4: ""Hiệu lực từ"", ""Hiệu lực đến"", ""BU bán hàng"", ""Tổng tiền trước thuế""
+     ++ Hàng 5: ""Phí vận chuyển"", ""Phí bốc xếp"", ""Tổng phí vận chuyển, bốc xếp"", ""Tổng thuế""
+     ++ Hàng 6: ""Tổng tiền sau thuế"", ""Mô tả"", ""Ghi chú"", ""Đơn vị tổ chức"" 
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_003,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 2 ""Thông tin khách hàng""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
++ Gồm 1 field:
+     ++ Hàng 1: ""Tên khách hàng""
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_004,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 3 ""Thông tin thanh toán""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Button ""Thêm báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_005,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 4 ""Thông tin xuất hóa đơn""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
++ Gồm 7 field:
+     ++ Hàng 1: ""Ngân hàng tham chiếu tỷ giá"", ""Tỷ giá tham chiếu"", ""Tỷ giá"", ""Tài khoản xuất hóa đơn"" 
+     ++ Hàng 2: ""Tên xuất hóa đơn"", ""Địa chỉ xuất hóa đơn"", ""Mã số thuế xuất hóa đơn""
+- Button ""Thêm báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_006,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = false và ""Yêu cầu vận chuyển"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
+- Group 5 ""Thông tin vận chuyển"":
++ Trường hợp ""Kho WMS"" = false và ""Yêu cầu vận chuyển"" = false: Gồm 10 field:
+** Mặc định thêm mới field ""Kho WMS"" = false, ""Yêu cầu vận chuyển"" = false
+     ++ Hàng 1: ""Kho WMS"", ""Tổ chức xuất hàng"", ""Địa chỉ kho xuất hàng"", ""Địa chỉ giao hàng""
+     ++ Hàng 2: ""Giao hàng từ ngày"", ""Giao hàng đến ngày"", ""Ngày giao hàng"", ""Ngày nhận hàng tự kiến""
+     ++ Hàng 3: ""Người nhận hàng"", ""Yêu cầu vận chuyển""
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_007,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = false và ""Yêu cầu vận chuyển"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
+- Group 5 ""Thông tin vận chuyển"":
++ Trường hợp ""Kho WMS"" = false và ""Yêu cầu vận chuyển"" = true: Gồm 15 field:
+** Mặc định thêm mới field ""Kho WMS"" = false, ""Yêu cầu vận chuyển"" = true
+     ++ Hàng 1: ""Kho WMS"", ""Tổ chức xuất hàng"", ""Địa chỉ kho xuất hàng"", ""Địa chỉ giao hàng""
+     ++ Hàng 2: ""Giao hàng từ ngày"", ""Giao hàng đến ngày"", ""Ngày giao hàng"", ""Ngày nhận hàng tự kiến""
+     ++ Hàng 3: ""Người nhận hàng"", ""Yêu cầu vận chuyển"", ""Phương thức giao hàng"", ""Xe vận chuyển""
+     ++ Hàng 4: ""Đơn vị vận chuyển"", ""Đối tác vận chuyển"", ""Bảng giá vận chuyển""
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_008,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = true và ""Yêu cầu vận chuyển"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
+- Group 5 ""Thông tin vận chuyển"":
++ Trường hợp ""Kho WMS"" = true và ""Yêu cầu vận chuyển"" = false: Gồm 12 field:
+** Mặc định thêm mới field ""Kho WMS"" = true, ""Yêu cầu vận chuyển"" = false
+     ++ Hàng 1: ""Kho WMS"", ""BU xuất hàng"", ""Tổ chức xuất hàng"", ""Kho xuất hàng""
+     ++ Hàng 2: ""Địa chỉ kho xuất hàng"", ""Địa chỉ giao hàng"", ""Giao hàng từ ngày"", ""Giao hàng đến ngày"" 
+     ++ Hàng 3: ""Ngày giao hàng"", ""Ngày nhận hàng tự kiến"", ""Người nhận hàng"", ""Yêu cầu vận chuyển
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_009,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = true và ""Yêu cầu vận chuyển"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
++ Trường hợp ""Kho WMS"" = true và ""Yêu cầu vận chuyển"" = true: Gồm 17 field:
+** Mặc định thêm mới field ""Kho WMS"" = true, ""Yêu cầu vận chuyển"" = true
+     ++ Hàng 1: ""Kho WMS"", ""BU xuất hàng"", ""Tổ chức xuất hàng"", ""Kho xuất hàng""
+     ++ Hàng 2: ""Địa chỉ kho xuất hàng"", ""Địa chỉ giao hàng"", ""Giao hàng từ ngày"", ""Giao hàng đến ngày"" 
+     ++ Hàng 3: ""Ngày giao hàng"", ""Ngày nhận hàng tự kiến"", ""Người nhận hàng"", ""Yêu cầu vận chuyển""
+     ++ Hàng 4: ""Phương thức giao hàng"", ""Xe vận chuyển"", ""Đơn vị vận chuyển"", ""Đối tác vận chuyển""
+     ++ Hàng 5: ""Bảng giá vận chuyển""
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_010,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
+- Group 5 ""Thông tin vận chuyển"":
+- Group 6 ""Thông tin bốc xếp"":
++ Trường hợp ""Yêu cầu bốc xếp"" = false: Gồm 1 field:
+** Mặc định thêm mới field ""Yêu cầu bốc xếp"" = false
+     ++ Hàng 1: ""Yêu cầu bốc xếp""
+- Button ""Thêm báo giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_011,,"Kiểm tra cách bố trí, sắp xếp các field trên page và các chức năng phải có
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","Follow the design path: https://www.figma.com/design/mT9RqCLN0gGrFOgQFWxdHz/-Web--Client-Portal?node-id=21319-92932&p=f&t=hLzOcPwrq6hA4bCu-0
+- Cách bố trí, sắp xếp các field:
+- Popup title: ""Thêm báo giá""
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hoá đơn"":
+- Group 5 ""Thông tin vận chuyển"":
+- Group 6 ""Thông tin bốc xếp"":
++ Trường hợp ""Yêu cầu bốc xếp"" = true: Gồm 3 field:
+** Mặc định thêm mới field ""Yêu cầu bốc xếp"" = false
+     ++ Hàng 1: ""Yêu cầu bốc xếp"", ""Phương thức bốc xếp"", ""Bảng giá bốc xếp""
+- Button ""Thêm báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_012,,Kiểm tra ngôn ngữ theo tiếng Việt,"1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""",<Xem ở TestCase ID ID_002 đến ID_011>,7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_013,,Kiểm tra ngôn ngữ theo tiếng Anh,"1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""",<Xem ở TestCase ID ID_002 đến ID_011>,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_014,,"Kiểm tra độ dài, độ phân giải",Chỉnh độ phân giải browser lên từ 200% trở lên,"- Độ dài các cột sắp xếp phù hợp với độ phân giải đang xem và view được đủ dữ liệu
+- Scroll direction: vertical / horizontal (Hướng cuộn: dọc / ngang)",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_015,,"Kiểm tra placeholder field
+Group 1 ""Thông tin chung""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 1 ""Thông tin chung"": Gồm 24 field
++ Field ""Mã báo giá"" có placeholder = ""Mã báo giá""
++ Field ""Người phụ trách"" có placeholder = ""Người phụ trách""
++ Field ""Tên báo giá"" có placeholder = ""Tên báo giá""
++ Field ""Mô tả"" có placeholder = ""Mô tả""
++ Field ""Ghi chú"" có placeholder = ""Ghi chú""
++ Field ""Số báo giá"" có placeholder = ""Số báo giá""
++ Field ""Loại báo giá"" có placeholder = ""Loại báo giá""
++ Field ""Khách hàng"" có placeholder = ""Khách hàng""
++ Field ""Tiền tệ"" có placeholder = ""Tiền tệ""
++ Field ""Bảng giá"" có placeholder = ""Bảng giá""
++ Field ""Sale phụ trách"" có placeholder = ""Sales phụ trách""
++ Field ""Ngày báo giá"" có placeholder = ""Ngày báo giá""
++ Field ""Hiệu lực từ"" có placeholder = ""Hiệu lực từ""
++ Field ""Hiệu lực đến"" có placeholder = ""Hiệu lực đến""
++ Field ""BU xuất hàng"" có placeholder = ""Pháp nhân bán hàng""
++ Field ""Số thập phân của giá"" => Field load theo ""Bảng giá"" được chọn nên không có placeholder
++ Các field ""Tổng tiền trước thuế"", ""Phí vận chuyển"", ""Phí bốc xếp"", ""Tổng phí vận chuyển bốc xếp"", ""Tổng thuế"", ""Tổng tiền sau thuế"" => Field tính toán từ hệ thống nên không có placeholder
++ Field ""Đơn vị tổ chức"" => Thuộc field hệ thống nên không có placeholder
++ Field ""Tạo hợp đồng"" => Field checkbox nên không có placeholder",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,Dư field Mã KH tiềm năng
+ID_016,,"Kiểm tra placeholder field
+Group 2 ""Thông tin khách hàng""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 2 ""Thông tin khách hàng"":
++ Field ""Tên khách hàng"" => Field load theo ""Khách hàng"" được chọn nên không có placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,Dư field Mã KH tiềm năng
+ID_017,,"Kiểm tra placeholder field
+Group 3 ""Thông tin thanh toán""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 3 ""Thông tin thanh toán"":
++ <Hidden on create>",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,Dư field Mã KH tiềm năng
+ID_018,,"Kiểm tra placeholder field
+Group 4 ""Thông tin xuất hóa đơn""","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 4 ""Thông tin xuất hóa đơn"": Gồm 7 field:
++ Field ""Ngân hàng tham chiếu tỷ giá"" có placeholder = ""Ngân hàng tham chiếu tỷ giá""
++ Field ""Tỷ giá tham chiếu"" có placeholder = ""Tỷ giá tham chiếu""
++ Field ""Tài khoản xuất hóa đơn"" có placeholder = ""Tài khoản xuất hóa đơn""
++ Field ""Tên xuất hóa đơn"" có placeholder = ""Tên xuất hóa đơn""
++ Field ""Địa chỉ xuất hóa đơn"" có placeholder = ""Địa chỉ xuất hóa đơn""
++ Field ""Mã số thuế xuất hóa đơn"" có placeholder = ""Mã số thuế xuất hóa đơn""
++ Field ""Tỷ giá"" => Field load theo ""Tỷ giá tham chiếu"" được chọn nên không có placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_019,,"Kiểm tra placeholder field
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = false và ""Yêu cầu vận chuyển"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 5 ""Thông tin vận chuyển"":
++ Field ""Tổ chức xuất hàng"" có placeholder = ""Tổ chức xuất hàng""
++ Field ""Kho xuất hàng"" có placeholder = ""Kho xuất hàng""
++ Field ""Địa chỉ kho xuất hàng"" có placeholder = ""Địa chỉ kho xuất hàng""
++ Field ""Địa chỉ giao hàng"" có placeholder = ""Địa chỉ giao hàng""
++ Field ""Giao hàng từ ngày"" có placeholder = ""Giao hàng từ ngày""
++ Field ""Giao hàng đến ngày"" có placeholder = ""Giao hàng đến ngày""
++ Field ""Ngày giao hàng"" xuất hóa đơn"" có placeholder = ""Ngày giao hàng""
++ Field ""Ngày nhận hàng dự kiến"" xuất hóa đơn"" có placeholder = ""Ngày nhận hàng dự kiến""
++ Field ""Người nhận hàng"" xuất hóa đơn"" có placeholder = ""Người nhận hàng""
++ Field ""Phương thức giao hàng"" xuất hóa đơn"" có placeholder = ""Phương thức giao hàng""
++ Field ""Xe vận chuyển"" có placeholder = ""Xe vận chuyển""
++ Field ""Đơn vị vận chuyển"" có placeholder = ""Đơn vị vận chuyển""
++ Field ""Đối tác vận chuyển"" có placeholder = ""Đối tác vận chuyển""
++ Field ""Bảng giá vận chuyển"" có placeholder = ""Bảng giá vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_020,,"Kiểm tra placeholder field
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = false và ""Yêu cầu vận chuyển"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 5 ""Thông tin vận chuyển"":
++ Field ""Tổ chức xuất hàng"" có placeholder = ""Tổ chức xuất hàng""
++ Field ""Kho xuất hàng"" có placeholder = ""Kho xuất hàng""
++ Field ""Địa chỉ kho xuất hàng"" có placeholder = ""Địa chỉ kho xuất hàng""
++ Field ""Địa chỉ giao hàng"" có placeholder = ""Địa chỉ giao hàng""
++ Field ""Giao hàng từ ngày"" có placeholder = ""Giao hàng từ ngày""
++ Field ""Giao hàng đến ngày"" có placeholder = ""Giao hàng đến ngày""
++ Field ""Ngày giao hàng"" xuất hóa đơn"" có placeholder = ""Ngày giao hàng""
++ Field ""Ngày nhận hàng dự kiến"" xuất hóa đơn"" có placeholder = ""Ngày nhận hàng dự kiến""
++ Field ""Người nhận hàng"" xuất hóa đơn"" có placeholder = ""Người nhận hàng""
++ Field ""Phương thức giao hàng"" xuất hóa đơn"" có placeholder = ""Phương thức giao hàng""
++ Field ""Xe vận chuyển"" có placeholder = ""Xe vận chuyển""
++ Field ""Đơn vị vận chuyển"" có placeholder = ""Đơn vị vận chuyển""
++ Field ""Đối tác vận chuyển"" có placeholder = ""Đối tác vận chuyển""
++ Field ""Bảng giá vận chuyển"" có placeholder = ""Bảng giá vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_021,,"Kiểm tra placeholder field
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = true và ""Yêu cầu vận chuyển"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 5 ""Thông tin vận chuyển"":
++ Field ""Tổ chức xuất hàng"" có placeholder = ""Tổ chức xuất hàng""
++ Field ""Kho xuất hàng"" có placeholder = ""Kho xuất hàng""
++ Field ""Địa chỉ kho xuất hàng"" có placeholder = ""Địa chỉ kho xuất hàng""
++ Field ""Địa chỉ giao hàng"" có placeholder = ""Địa chỉ giao hàng""
++ Field ""Giao hàng từ ngày"" có placeholder = ""Giao hàng từ ngày""
++ Field ""Giao hàng đến ngày"" có placeholder = ""Giao hàng đến ngày""
++ Field ""Ngày giao hàng"" xuất hóa đơn"" có placeholder = ""Ngày giao hàng""
++ Field ""Ngày nhận hàng dự kiến"" xuất hóa đơn"" có placeholder = ""Ngày nhận hàng dự kiến""
++ Field ""Người nhận hàng"" xuất hóa đơn"" có placeholder = ""Người nhận hàng""
++ Field ""Phương thức giao hàng"" xuất hóa đơn"" có placeholder = ""Phương thức giao hàng""
++ Field ""Xe vận chuyển"" có placeholder = ""Xe vận chuyển""
++ Field ""Đơn vị vận chuyển"" có placeholder = ""Đơn vị vận chuyển""
++ Field ""Đối tác vận chuyển"" có placeholder = ""Đối tác vận chuyển""
++ Field ""Bảng giá vận chuyển"" có placeholder = ""Bảng giá vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_022,,"Kiểm tra placeholder field
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""Kho WMS"" = true và ""Yêu cầu vận chuyển"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 5 ""Thông tin vận chuyển"":
++ Field ""Tổ chức xuất hàng"" có placeholder = ""Tổ chức xuất hàng""
++ Field ""Kho xuất hàng"" có placeholder = ""Kho xuất hàng""
++ Field ""Địa chỉ kho xuất hàng"" có placeholder = ""Địa chỉ kho xuất hàng""
++ Field ""Địa chỉ giao hàng"" có placeholder = ""Địa chỉ giao hàng""
++ Field ""Giao hàng từ ngày"" có placeholder = ""Giao hàng từ ngày""
++ Field ""Giao hàng đến ngày"" có placeholder = ""Giao hàng đến ngày""
++ Field ""Ngày giao hàng"" xuất hóa đơn"" có placeholder = ""Ngày giao hàng""
++ Field ""Ngày nhận hàng dự kiến"" xuất hóa đơn"" có placeholder = ""Ngày nhận hàng dự kiến""
++ Field ""Người nhận hàng"" xuất hóa đơn"" có placeholder = ""Người nhận hàng""
++ Field ""Phương thức giao hàng"" xuất hóa đơn"" có placeholder = ""Phương thức giao hàng""
++ Field ""Xe vận chuyển"" có placeholder = ""Xe vận chuyển""
++ Field ""Đơn vị vận chuyển"" có placeholder = ""Đơn vị vận chuyển""
++ Field ""Đối tác vận chuyển"" có placeholder = ""Đối tác vận chuyển""
++ Field ""Bảng giá vận chuyển"" có placeholder = ""Bảng giá vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_023,,"Kiểm tra placeholder field
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 6 ""Thông tin bốc xếp"": Gồm 1 field:
++ Field ""Yêu cầu bốc xếp"" => Field checkbox nên không có placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_024,,"Kiểm tra placeholder field
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá"" chọn button ""Thêm mới""","- Group 6 ""Thông tin bốc xếp"": Gồm 3 field:
++ Field ""Phương thức bốc xếp"" có placeholder = ""Phương thức bốc xếp""
++ Field ""Bảng giá bốc xếp"" có placeholder = ""Bảng giá bốc xếp""
++ Field ""Yêu cầu bốc xếp"" => Field checkbox nên không có placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_025,,Kiểm tra currency unit field,N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_026,,Kiểm tra thu hẹp/ mở rộng menu trái,"- Collapse menu → Thu hẹp menu
+- Expand menu → Mở rộng menu","- Thu hẹp menu: (Collapse): Màn hình tự đẩy về phía trái, và thứ tự các field vẫn không thay đổi
+- Mở rộng menu (Expand): Màn hình tự đẩy về phái phải và thứ tự các field vẫn không thay đổi",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_027, CREATE NEW ,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 1 ""Thông tin chung""","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"":
++ ""Mã báo giá"" = BG-20260401-001
++ ""Người phụ trách"" = Nguyễn Văn A
++ ""Tên báo giá"" = Báo giá cung cấp đường RE cho nhà máy sản xuất bánh kẹo Q2/2026
++ ""Mô tả"" = Cung cấp đường tinh luyện RE số lượng lớn, giao theo từng đợt trong tháng
++ ""Ghi chú"" = Giá đã bao gồm chiết khấu 3 phần trăm cho hợp đồng 100 tấn
++ ""Số báo giá"" = BG-RE-0426-001
++ ""Loại báo giá"" = Other Contract
++ ""Khách hàng"" = Công ty CP Bánh Kẹo Hữu Nghị
++ ""Tiền tệ"" = Đồng
++ ""Bảng giá"" = Bảng giá ngành FMCG miền Bắc Q2.2026
++ ""Sales phụ trách"" = Trần Minh B
++ ""Ngày báo giá"" = 13/04/2026
++ ""Hiệu lực từ"" = 15/04/2026
++ ""Hiệu lực đến"" = 30/06/2026
++ ""Tạo hợp đồng"" = Có
++ ""BU xuất hàng"" = BHS
+
+- Group 2 ""Thông tin khách hàng"": N/A
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_0xx>
+- Group 5 ""Thông tin vận chuyển"":
+- Group 6 ""Thông tin bốc xếp"":
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,chưa đủ field => chưa test
+ID_028,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 2 ""Thông tin khách hàng""","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": N/A
++ ""Tên khách hàng"" = Nguyễn Văn A
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_0xx>
+- Group 5 ""Thông tin vận chuyển"": <xem ID_0xx>
+- Group 6 ""Thông tin bốc xếp"": <xem ID_0xx>
+- Chọn button ""Thêm báo giá""","- Field ""Tên khách hàng"" là readonly
+- Load theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,chưa đủ field => chưa test
+ID_029,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 3 ""Thông tin thanh toán"" <Hidden on create>",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,chưa đủ field => chưa test
+ID_030,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 4 ""Thông tin xuất hóa đơn""","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": <xem ID_015>
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_016>
+- Group 4 ""Thông tin xuất hóa đơn"":
++ ""Ngân hàng tham chiếu tỷ giá"" = Ngân hàng TMCP Ngoại thương Việt Nam (Vietcombank)
++ ""Tỷ giá tham chiếu"" = 1 (VND)
++ ""Tài khoản xuất hóa đơn"" = CTY_CP_DUONG_MIEN_BAC_0101234567
+- Group 5 ""Thông tin vận chuyển"": <xem ID_018>
+- Group 6 ""Thông tin bốc xếp"": <xem ID_019>
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,chưa đủ field => chưa test
+ID_031,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""WMS"" = false và ""Yêu cầu vận chuyển"" = false","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": <xem ID_015>
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_016>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_017>
+- Group 5 ""Thông tin vận chuyển"":
++ ""Kho WMS"" = false
++ ""Kho xuất hàng"" = 
++ ""Tổ chức xuất hàng"" = 
++ ""Địa chỉ giao hàng"" =
++ ""Giao hàng từ ngày"" = 
++ ""Giao hàng đến ngày"" = 
++ ""Ngày giao hàng"" = 
++ ""Ngày nhận hàng dự kiến"" = 
++ ""Người nhận hàng"" = 
++ ""Yêu cầu vận chuyển"" = false
+- Group 6 ""Thông tin bốc xếp"": <xem ID_019>
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,chưa đủ field => chưa test
+ID_032,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""WMS"" = false và ""Yêu cầu vận chuyển"" = true","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": <xem ID_015>
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_016>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_017>
+- Group 5 ""Thông tin vận chuyển"":
++ ""Kho WMS"" = false
++ ""Kho xuất hàng"" = 
++ ""Tổ chức xuất hàng"" = 
++ ""Địa chỉ giao hàng"" =
++ ""Giao hàng từ ngày"" = 
++ ""Giao hàng đến ngày"" = 
++ ""Ngày giao hàng"" = 
++ ""Ngày nhận hàng dự kiến"" = 
++ ""Người nhận hàng"" = 
++ ""Yêu cầu vận chuyển"" = true
++ ""Phương thức giao hàng"" = 
++ ""Xe vận chuyển"" = 
++ ""Đơn vị vận chuyển"" = 
++ ""Đối tác vận chuyển"" = 
++ ""Bảng giá vận chuyển"" = 
+- Group 6 ""Thông tin bốc xếp"": <xem ID_019>
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_033,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""WMS"" = true và ""Yêu cầu vận chuyển"" = false","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": <xem ID_015>
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_016>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_017>
+- Group 5 ""Thông tin vận chuyển"":
++ ""Kho WMS"" = true
++ ""Kho xuất hàng"" = 
++ ""Đơn vị tổ chức giao hàng"" = 
++ ""Tổ chức xuất hàng"" = 
++ ""Kho xuất hàng"" = 
++ ""Địa chỉ giao hàng"" =
++ ""Giao hàng từ ngày"" = 
++ ""Giao hàng đến ngày"" = 
++ ""Ngày giao hàng"" = 
++ ""Ngày nhận hàng dự kiến"" = 
++ ""Người nhận hàng"" = 
++ ""Yêu cầu vận chuyển"" = false
+- Group 6 ""Thông tin bốc xếp"": <xem ID_019>
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_034,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 5 ""Thông tin vận chuyển""
+Trường hợp ""WMS"" = true và ""Yêu cầu vận chuyển"" = true","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": <xem ID_015>
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_016>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_017>
+- Group 5 ""Thông tin vận chuyển"":
++ ""Kho WMS"" = true
++ ""Kho xuất hàng"" = 
++ ""Đơn vị tổ chức giao hàng"" = 
++ ""Tổ chức xuất hàng"" = 
++ ""Kho xuất hàng"" = 
++ ""Địa chỉ giao hàng"" =
++ ""Giao hàng từ ngày"" = 
++ ""Giao hàng đến ngày"" = 
++ ""Ngày giao hàng"" = 
++ ""Ngày nhận hàng dự kiến"" = 
++ ""Người nhận hàng"" = 
++ ""Yêu cầu vận chuyển"" = true
++ ""Phương thức giao hàng"" = 
++ ""Xe vận chuyển"" = 
++ ""Đơn vị vận chuyển"" = 
++ ""Đối tác vận chuyển"" = 
++ ""Bảng giá vận chuyển"" = 
+- Group 6 ""Thông tin bốc xếp"": <xem ID_019>
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_035,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = false","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": N/A
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_015>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_016>
+- Group 5 ""Thông tin vận chuyển"": <xem ID_017, ID_018, ID_019, ID_020>
+- Group 6 ""Thông tin bốc xếp"":
++ ""Yêu cầu bốc xếp"" = false
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_036,,"Kiểm tra thêm mới dữ liệu ""Báo giá""
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = true","- ""Ngày tạo"" = 10/03/2026
+- ""Người tạo"" = duyenntm@msm.com.vn
+
+- Nhập/ chọn dữ liệu:
+- Group 1 ""Thông tin chung"": <xem ID_014>
+- Group 2 ""Thông tin khách hàng"": N/A
+- Group 3 ""Thông tin thanh toán"": <Hidden on create> <xem ID_015>
+- Group 4 ""Thông tin xuất hóa đơn"": <xem ID_016>
+- Group 5 ""Thông tin vận chuyển"": <xem ID_017, ID_018, ID_019, ID_020>
+- Group 6 ""Thông tin bốc xếp"":
++ ""Yêu cầu bốc xếp"" = true
++ ""Phương thức bốc xếp"" = 
++ ""Bảng giá bốc xếp"" = 
+- Chọn button ""Thêm báo giá""","- Hệ thống thông báo - Toast message: ""<icon success> Đã thêm báo giá thành công""
+- Chọn button ""Thêm báo giá"", hệ thống đóng màn hình ""Thêm báo giá"" và direct về page ""Quản lý báo giá""
+
+- Lưu trữ thành công vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_037,,"Kiểm tra 1 ""Khách hàng"" thuộc nhiều ""Báo giá"" khác nhau",Thêm mới báo giá,"Cho phép 1 ""Khách hàng"" thuộc nhiều ""Báo giá"" khác nhau, không ràng buộc thời gian",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_038,,"Kiểm tra độ dài ""Mã báo giá"" tối đa 60 ký tự (Chuỗi ký tự ngắn)
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị vượt quá 60 ký tự,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Mã báo giá không được vượt quá 60 ký tự""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_039,,"Kiểm tra độ dài ""Tên báo giá"" tối đa 60 ký tự (Chuỗi ký tự ngắn)
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị vượt quá 60 ký tự,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Tên báo giá không được vượt quá 60 ký tự""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_040,,"Kiểm tra độ dài ""Số báo giá"" tối đa 60 ký tự (Chuỗi ký tự ngắn)
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị vượt quá 60 ký tự,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Số báo giá không được vượt quá 60 ký tự""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_041,,"Kiểm tra độ dài ""Mô tả"" tối đa 300 ký tự (Chuỗi ký tự)
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị vượt quá 300 ký tự,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Mô tả không được vượt quá 300 ký tự""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_042,,"Kiểm tra độ dài ""Ghi chú"" tối đa 300 ký tự (Chuỗi ký tự)
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị vượt quá 300 ký tự,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Ghi chú không được vượt quá 300 ký tự""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_043,,"Kiểm tra độ dài ""Tên khách hàng"" tối đa 300 ký tự (Chuỗi ký tự)
+Group 2 ""Thông tin khách hàng""",Nhập/Paste giá trị vượt quá 300 ký tự,"- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_044,,"Kiểm tra độ dài tối đa ký tự
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_045,,"Kiểm tra độ dài ""Tên xuất hóa đơn"" tối đa 300 ký tự (Chuỗi ký tự)
+Group 4 ""Thông tin xuất hóa đơn""",Nhập/Paste giá trị vượt quá 300 ký tự,"- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_046,,"Kiểm tra độ dài ""Địa chỉ xuất hóa đơn"" tối đa 300 ký tự (Chuỗi ký tự)
+Group 4 ""Thông tin xuất hóa đơn""",Nhập/Paste giá trị vượt quá 300 ký tự,"- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_047,,"Kiểm tra độ dài ""Mã số thuế xuất hóa đơn"" tối đa 60 ký tự (Chuỗi ký tự ngắn)
+Group 4 ""Thông tin xuất hóa đơn""",Nhập/Paste giá trị vượt quá 60 ký tự,"- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_048,,"Kiểm tra độ dài ""Địa chỉ kho xuất hàng"" tối đa 300 ký tự (Chuỗi ký tự)
+Group 5 ""Thông tin vận chuyển""",Nhập/Paste giá trị vượt quá 300 ký tự,"- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_049,,"Kiểm tra độ dài tối đa ký tự
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_050,,"Kiểm tra field required, user chọn/ nhập",,"- Group 1 ""Thông tin chung"": Các field ""Mã báo giá"", ""Người phụ trách"", ""Tên báo giá"", ""Loại báo giá"", ""Khách hàng"", ""Tiền tệ"", ""Bảng giá"", ""Ngày báo giá"", ""Hiệu lực từ"", ""Hiệu lực đến"", ""Pháp nhân bán hàng"" là required
+- Group 2 ""Thông tin khách hàng"": N/A
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hóa đơn"": N/A
+- Group 5 ""Thông tin vận chuyển"": Các field ""Đơn vị tổ chức giao hàng"" (required khi ""WMS"" = Check), ""Tổ chức xuất hàng"" (required khi ""WMS"" = Check), ""Kho xuất hàng"" (required khi ""WMS"" = Check), ""Địa chỉ giao hàng"", ""Giao hàng từ ngày"", ""Giao hàng đến ngày"", ""Người nhận hàng"" là field required
+- Group 6 ""Thông tin bốc xếp"": Các field ""Phương thức bốc xếp"" (required khi ""Yêu cầu bốc xếp"" = Check), ""Bảng giá bốc xếp"" (required khi ""Yêu cầu bốc xếp"" = Check) là field required",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_051,,"Kiểm tra field required, hệ thống mặc định",,"- Group 1 ""Thông tin chung"": Field ""Số thập phân của giá"" là required
+- Group 2 ""Thông tin khách hàng"": Các field ""Tên khách hàng"", ""Mã khách hàng"" là field
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hóa đơn"": N/A
+- Group 5 ""Thông tin vận chuyển"": Field ""Địa chỉ kho xuất hàng"" là field required
+- Group 6 ""Thông tin bốc xếp"": N/A",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_052,,Kiểm tra field not required,,"- Group 1 ""Thông tin chung"": Các field ""Người xử lý"", ""Mô tả"", ""Ghi chú"", ""Số báo giá"", ""Sales phụ trách"" là not required
+- Group 2 ""Thông tin khách hàng"": N/A
+- Group 3 ""Thông tin thanh toán"": <Hidden on create>
+- Group 4 ""Thông tin xuất hóa đơn"": Tất cả các field là not required
+- Group 5 ""Thông tin vận chuyển"": Các field ""Kho WMS"", ""Đơn vị tổ chức giao hàng"" (not required khi ""Kho WMNS"" = Uncheck), ""Tổ chức xuất hàng"" (not required khi ""Kho WMNS"" = Uncheck), ""Ngày giao hàng"", ""Ngày nhận hàng dự kiến"", ""Yêu cầu vận chuyển"", ""Phương thức giao hàng"" (not required khi ""Yêu cầu vận chuyển"" = Uncheck), ""Xe vận chuyển"" (not required khi ""Phương thức giao hàng"" <> Trip), ""Đơn vị vận chuyển"" (not required khi ""Yêu cầu vận chuyển"" = Uncheck, ""Đối tác vận chuyển"", ""Mã đơn vị vận chuyển"", ""Bảng giá vận chuyển"",  là field required
+- Group 6 ""Thông tin bốc xếp"": Tất cả các field là not required",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_053,,"Kiểm tra field required ""Mã báo giá"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng nhập mã báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_054,,"Kiểm tra field required ""Người phụ trách"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn người phụ trách""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_055,,"Kiểm tra field required ""Tên báo giá"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng nhập tên báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_056,,"Kiểm tra field required ""Loại báo giá"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn loại báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_057,,"Kiểm tra field required ""Khách hàng"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn khách hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_058,,"Kiểm tra field required ""Tiền tệ"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn tiền tệ""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_059,,"Kiểm tra field required ""Bảng giá"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn bảng giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_060,,"Kiểm tra field required ""Số thập phân của giá"" là NULL
+Group 1 ""Thông tin chung""","- Chọn ""Bảng giá"" = Bảng giá tháng 04.2025
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Bảng giá"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_061,,"Kiểm tra field required ""Ngày báo giá"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn ngày báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_062,,"Kiểm tra field required ""Hiệu lực từ"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn hiệu lực từ""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_063,,"Kiểm tra field required ""Hiệu lực đến"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn hiệu lực đến""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_064,,"Kiểm tra field required ""BU xuất hàng"" là NULL
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn BU xuất hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_065,,"Kiểm tra field required ""Tên khách hàng"" là NULL
+Group 2 ""Thông tin khách hàng""","- Chọn ""Khách hàng"" = Công ty TNHH ABC
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_066,,"Kiểm tra field required là NULL
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_067,,"Kiểm tra field required là NULL
+Group 4 ""Thông tin xuất hóa đơn""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_068,,"Kiểm tra field required ""BU xuất hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""BU xuất hàng"" = BHC (hoặc bất kỳ)
+- Chọn ""Kho WMS"" = true
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""BU xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_069,,"Kiểm tra field required ""Tổ chức xuất hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Pháp nhân bán hàng"" = BHC
+- Chọn ""WMS"" = false
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn tổ chức xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_070,,"Kiểm tra field required ""Kho xuất hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Khách hàng"" = Công ty TNHH ABC
+- Chọn ""WMS"" = true
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Mặc định load dữ liệu theo ""Khách hàng"" được chọn
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn kho xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_071,,"Kiểm tra field required ""Địa chỉ kho xuất hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Kho xuất hàng"" = Kho HCM
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_072,,"Kiểm tra field required ""Địa chỉ giao hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Kho xuất hàng"" = Kho HCM
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Mặc định load dữ liệu theo ""Khách hàng"" được chọn
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn địa chỉ giao hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_073,,"Kiểm tra field required ""Giao hàng từ ngày"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn giao hàng từ ngày""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_074,,"Kiểm tra field required ""Giao hàng đến ngày"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn giao hàng đến ngày""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_075,,"Kiểm tra field required ""Người nhận hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn người nhận hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_076,,"Kiểm tra field required ""Phương thức giao hàng"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Yêu cầu vận chuyển"" = true
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field hiển thị khi chọn ""Yêu cầu vận chuyển"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn phương thức giao hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_077,,"Kiểm tra field required ""Xe vận chuyển"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Yêu cầu vận chuyển"" = true
+- Chọn ""Phương thức giao hàng"" = Trip (Tính theo chuyến)
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field hiển thị khi chọn ""Yêu cầu vận chuyển"" = true
+- Field bắt buộc khi chọn ""Phương thức giao hàng"" = Trip (Tính theo chuyến)
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn xe vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_078,,"Kiểm tra field required ""Đơn vị vận chuyển"" là NULL
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Yêu cầu vận chuyển"" = true
+- Chọn ""Phương thức giao hàng"" = Ton (Tính theo khối lượng)
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field hiển thị khi chọn ""Yêu cầu vận chuyển"" = true
+- Field bắt buộc khi chọn ""Phương thức giao hàng"" = Ton (Tính theo khối lượng)
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn đơn vị vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_079,,"Kiểm tra field required ""Phương thức bốc xếp"" là NULL
+Group 6 ""Thông tin bốc xếp""","- Chọn ""Yêu cầu bốc xếp"" = true
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field hiển thị khi chọn ""Yêu cầu bốc xếp"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn phương thức bốc xếp""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_080,,"Kiểm tra field required ""Bảng giá bốc xếp"" là NULL
+Group 6 ""Thông tin bốc xếp""","- Chọn ""Yêu cầu bốc xếp"" = true
+- Nhập/Paste giá trị = NULL
+- Chọn button ""Thêm báo giá""","- Field hiển thị khi chọn ""Yêu cầu bốc xếp"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn bảng giá bốc xếp""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_081,,"Kiểm tra field not required ""Mô tả"" là <khoảng trắng>
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field chỉ nhập khoảng trắng, khi lưu lại giá trị là trống
+- Field hiển thị placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_082,,"Kiểm tra field not required ""Ghi chú"" là <khoảng trắng>
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field chỉ nhập khoảng trắng, khi lưu lại giá trị là trống
+- Field hiển thị placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_083,,"Kiểm tra field not required ""Số báo giá"" là <khoảng trắng>
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field chỉ nhập khoảng trắng, khi lưu lại giá trị là trống
+- Field hiển thị placeholder",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_084,,"Kiểm tra field not required là <khoảng trắng>
+Group 2 ""Thông tin khách hàng""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_085,,"Kiểm tra field not required là <khoảng trắng>
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_086,,"Kiểm tra field not required ""Tên xuất hóa đơn"" là <khoảng trắng>
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_087,,"Kiểm tra field not required ""Địa chỉ xuất hóa đơn"" là <khoảng trắng>
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_088,,"Kiểm tra field not required ""Mã số thuế xuất hóa đơn"" là <khoảng trắng>
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_089,,"Kiểm tra field not required ""Địa chỉ kho xuất hàng"" là <khoảng trắng>
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = <khoảng trắng><khoảng trắng>
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_090,,"Kiểm tra field not required là <khoảng trắng>
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_091,,"Kiểm tra ""Số thập phân của giá"" là giá trị <NUMBER>
+Group 1 ""Thông tin chung""",Nhập/Paster giá trị = 1.000,"- Field là readonly
+- Mặc định load dữ liệu theo ""Bảng giá"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_092,,"Kiểm tra là giá trị <NUMBER>
+Group 2 ""Thông tin khách hàng""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_093,,"Kiểm tra là giá trị <NUMBER>
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_094,,"Kiểm tra ""Tỷ giá"" là giá trị <NUMBER>
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paster giá trị = 1,52","- Field là readonly
+- Mặc định load dữ liệu theo ""Tỷ giá tham chiếu"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_095,,"Kiểm tra là giá trị <NUMBER>
+Group 5 ""Thông tin vận chuyển""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_096,,"Kiểm tra là giá trị <NUMBER>
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_097,,"Kiểm tra ""Ngày báo giá"" là giá trị đúng định dạng dd/MM/yyyy
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_098,,"Kiểm tra ""Ngày báo giá"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_099,,"Kiểm tra ""Ngày báo giá"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_100,,"Kiểm tra ""Ngày báo giá"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_101,,"Kiểm tra ""Ngày báo giá"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_102,,"Kiểm tra ""Ngày báo giá"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_103,,"Kiểm tra ""Ngày báo giá"" là giá trị THÁNG > 12
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_104,,"Kiểm tra ""Ngày báo giá"" là giá trị THÁNG < 01
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_105,,"Kiểm tra ""Ngày báo giá"" là giá trị NĂM NHUẬN
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_106,,"Kiểm tra ""Ngày báo giá"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_107,,"Kiểm tra ""Ngày báo giá"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_108,,"Kiểm tra ""Ngày báo giá"" là giá trị KHÔNG PHẢI SỐ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_109,,"Kiểm tra ""Ngày báo giá"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_110,,"Kiểm tra ""Ngày báo giá"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_111,,"Kiểm tra ""Ngày báo giá"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_112,,"Kiểm tra ""Ngày báo giá"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_113,,"Kiểm tra ""Ngày báo giá"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_114,,"Kiểm tra ""Ngày báo giá"" là giá trị THIẾU NGÀY
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_115,,"Kiểm tra ""Ngày báo giá"" là giá trị THIẾU THÁNG
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_116,,"Kiểm tra ""Ngày báo giá"" là giá trị THIẾU NĂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_117,,"Kiểm tra ""Ngày báo giá"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_118,,"Kiểm tra ""Ngày báo giá"" là giá trị ÂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_119,,"Kiểm tra ""Hiệu lực từ"" là giá trị đúng định dạng dd/MM/yyyy
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_120,,"Kiểm tra ""Hiệu lực từ"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_121,,"Kiểm tra ""Hiệu lực từ"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_122,,"Kiểm tra ""Hiệu lực từ"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_123,,"Kiểm tra ""Hiệu lực từ"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_124,,"Kiểm tra ""Hiệu lực từ"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_125,,"Kiểm tra ""Hiệu lực từ"" là giá trị THÁNG > 12
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_126,,"Kiểm tra ""Hiệu lực từ"" là giá trị THÁNG < 01
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_127,,"Kiểm tra ""Hiệu lực từ"" là giá trị NĂM NHUẬN
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_128,,"Kiểm tra ""Hiệu lực từ"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_129,,"Kiểm tra ""Hiệu lực từ"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_130,,"Kiểm tra ""Hiệu lực từ"" là giá trị KHÔNG PHẢI SỐ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_131,,"Kiểm tra ""Hiệu lực từ"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_132,,"Kiểm tra ""Hiệu lực từ"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_133,,"Kiểm tra ""Hiệu lực từ"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_134,,"Kiểm tra ""Hiệu lực từ"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_135,,"Kiểm tra ""Hiệu lực từ"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_136,,"Kiểm tra ""Hiệu lực từ"" là giá trị THIẾU NGÀY
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_137,,"Kiểm tra ""Hiệu lực từ"" là giá trị THIẾU THÁNG
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_138,,"Kiểm tra ""Hiệu lực từ"" là giá trị THIẾU NĂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_139,,"Kiểm tra ""Hiệu lực từ"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_140,,"Kiểm tra ""Hiệu lực từ"" là giá trị ÂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_141,,"Kiểm tra ""Hiệu lực đến"" là giá trị đúng định dạng dd/MM/yyyy
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_142,,"Kiểm tra ""Hiệu lực đến"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_143,,"Kiểm tra ""Hiệu lực đến"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_144,,"Kiểm tra ""Hiệu lực đến"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_145,,"Kiểm tra ""Hiệu lực đến"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_146,,"Kiểm tra ""Hiệu lực đến"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_147,,"Kiểm tra ""Hiệu lực đến"" là giá trị THÁNG > 12
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_148,,"Kiểm tra ""Hiệu lực đến"" là giá trị THÁNG < 01
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_149,,"Kiểm tra ""Hiệu lực đến"" là giá trị NĂM NHUẬN
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_150,,"Kiểm tra ""Hiệu lực đến"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_151,,"Kiểm tra ""Hiệu lực đến"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_152,,"Kiểm tra ""Hiệu lực đến"" là giá trị KHÔNG PHẢI SỐ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_153,,"Kiểm tra ""Hiệu lực đến"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_154,,"Kiểm tra ""Hiệu lực đến"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_155,,"Kiểm tra ""Hiệu lực đến"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_156,,"Kiểm tra ""Hiệu lực đến"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_157,,"Kiểm tra ""Hiệu lực đến"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_158,,"Kiểm tra ""Hiệu lực đến"" là giá trị THIẾU NGÀY
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_159,,"Kiểm tra ""Hiệu lực đến"" là giá trị THIẾU THÁNG
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_160,,"Kiểm tra ""Hiệu lực đến"" là giá trị THIẾU NĂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_161,,"Kiểm tra ""Hiệu lực đến"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_162,,"Kiểm tra ""Hiệu lực đến"" là giá trị ÂM
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_163,,"Kiểm tra là giá trị <DATETIME>
+Group 2 ""Thông tin khách hàng""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_164,,"Kiểm tra là giá trị <DATETIME>
+Group 3 ""Thông tin thanh toán"" <Hidden on create>",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_165,,"Kiểm tra là giá trị <DATETIME>
+Group 4 ""Thông tin xuất hóa đơn""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_166,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị đúng định dạng dd/MM/yyyy
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_167,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_168,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_169,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_170,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_171,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_172,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THÁNG > 12
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_173,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THÁNG < 01
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_174,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_175,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_176,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_177,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị KHÔNG PHẢI SỐ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_178,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_179,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_180,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_181,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_182,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_183,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THIẾU NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_184,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THIẾU THÁNG
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_185,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị THIẾU NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_186,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_187,,"Kiểm tra ""Giao hàng từ ngày"" là giá trị ÂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_188,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị đúng định dạng dd/MM/yyyy
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_189,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_190,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_191,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_192,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_193,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_194,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THÁNG > 12
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_195,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THÁNG < 01
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_196,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_197,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_198,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_199,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị KHÔNG PHẢI SỐ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_200,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_201,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_202,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_203,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_204,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_205,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THIẾU NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_206,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THIẾU THÁNG
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_207,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị THIẾU NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_208,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_209,,"Kiểm tra ""Giao hàng đến ngày"" là giá trị ÂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_210,,"Kiểm tra ""Ngày giao hàng"" là giá trị đúng định dạng dd/MM/yyyy
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_211,,"Kiểm tra ""Ngày giao hàng"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_212,,"Kiểm tra ""Ngày giao hàng"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_213,,"Kiểm tra ""Ngày giao hàng"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_214,,"Kiểm tra ""Ngày giao hàng"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_215,,"Kiểm tra ""Ngày giao hàng"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_216,,"Kiểm tra ""Ngày giao hàng"" là giá trị THÁNG > 12
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_217,,"Kiểm tra ""Ngày giao hàng"" là giá trị THÁNG < 01
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_218,,"Kiểm tra ""Ngày giao hàng"" là giá trị NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_219,,"Kiểm tra ""Ngày giao hàng"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_220,,"Kiểm tra ""Ngày giao hàng"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_221,,"Kiểm tra ""Ngày giao hàng"" là giá trị KHÔNG PHẢI SỐ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_222,,"Kiểm tra ""Ngày giao hàng"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_223,,"Kiểm tra ""Ngày giao hàng"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_224,,"Kiểm tra ""Ngày giao hàng"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_225,,"Kiểm tra ""Ngày giao hàng"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_226,,"Kiểm tra ""Ngày giao hàng"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_227,,"Kiểm tra ""Ngày giao hàng"" là giá trị THIẾU NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_228,,"Kiểm tra ""Ngày giao hàng"" là giá trị THIẾU THÁNG
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_229,,"Kiểm tra ""Ngày giao hàng"" là giá trị THIẾU NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_230,,"Kiểm tra ""Ngày giao hàng"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_231,,"Kiểm tra ""Ngày giao hàng"" là giá trị ÂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_232,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị đúng định dạng dd/MM/yyyy
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/12/2026
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_233,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THIẾU SỐ 0 ĐỆM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 1/1/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_234,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị SAI KÝ TỰ PHÂN CÁCH (dùng - thay /)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31-12-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_235,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị SAI THỨ TỰ (yyyy/MM/dd)
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 12/31/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_236,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị NGÀY KHÔNG TỒN TẠI
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 32/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_237,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị NGÀY KHÔNG PHẢI TỪ 01-31
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/01/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_238,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THÁNG > 12
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/13/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_239,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THÁNG < 01
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/00/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_240,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2024
+- Focus ra ngoài",Field giữ giá trị nhập hợp lệ,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_241,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị KHÔNG PHẢI NĂM NHUẬN
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 29/02/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_242,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THÁNG 4 CHỈ CÓ 30 NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31/04/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_243,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị KHÔNG PHẢI SỐ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = abcd
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_244,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị NĂM KHÔNG ĐỦ 4 KÝ TỰ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 11/11/26
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_245,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị CÓ KHOẢNG TRẮNG ĐẦU
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = <khoảng trắng>31/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_246,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị CÓ KHOẢNG TRẮNG GIỮA
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 31<khoảng trắng>/12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_247,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị TẤT CẢ GIÁ ĐỀU KHÔNG HỢP LỆ
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 00/00/0000
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_248,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị KÝ TỰ ĐẶC BIỆT
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = @@/##/$$$$
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_249,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THIẾU NGÀY
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = /12/2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_250,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THIẾU THÁNG
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01//2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_251,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị THIẾU NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_252,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị VƯỢT ĐỘ DÀI NĂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 01/12/999999
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_253,,"Kiểm tra ""Ngày nhận hàng dự kiến"" là giá trị ÂM
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị = 15/08/-2026
+- Focus ra ngoài","Dữ liệu không hợp lệ, focus ra ngoài field default về giá trị trước đó",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_254,,"Kiểm tra là giá trị <DATETIME>
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_255,,"Kiểm tra là giá trị <DATETIME>
+Group 7 ""Kết quả báo giá""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_256,,Kiểm tra chức năng copy/paste dữ liệu,Copy/Paste dữ liệu vào các field,Cho phép copy/paste dữ liệu vào field,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_257,,"Kiểm tra ""Mã báo giá"" là ký tự latin
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị = 颜色,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Mã báo giá không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_258,,"Kiểm tra ""Tên báo giá"" là ký tự latin
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị = 颜色,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Tên báo giá không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_259,,"Kiểm tra ""Mô tả"" là ký tự latin
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị = 颜色,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Mô tả không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_260,,"Kiểm tra ""Ghi chú"" là ký tự latin
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị = 颜色,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Ghi chú không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_261,,"Kiểm tra ""Số báo giá"" là ký tự latin
+Group 1 ""Thông tin chung""",Nhập/Paste giá trị = 颜色,"- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Số báo giá không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_262,,"Kiểm tra ""Tên khách hàng"" là ký tự latin
+Group 2 ""Thông tin khách hàng""",Nhập/Paste giá trị = 颜色,"- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_263,,"Kiểm tra là ký tự latin
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_264,,"Kiểm tra ""Tên xuất hóa đơn"" là ký tự latin
+Group 4 ""Thông tin xuất hóa đơn""",Nhập/Paste giá trị = 颜色,"- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_265,,"Kiểm tra ""Địa chỉ xuất hóa đơn"" là ký tự latin
+Group 4 ""Thông tin xuất hóa đơn""",Nhập/Paste giá trị = 颜色,"- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_266,,"Kiểm tra ""Mã số thuế xuất hóa đơn"" là ký tự latin
+Group 4 ""Thông tin xuất hóa đơn""",Nhập/Paste giá trị = 颜色,"- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_267,,"Kiểm tra ""Địa chỉ kho xuất hàng"" là ký tự latin
+Group 5 ""Thông tin vận chuyển""",Nhập/Paste giá trị = 颜色,"- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_268,,"Kiểm tra là ký tự latin
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_269,,"Kiểm tra ""Mã báo giá"" là ký tự cho phép (Ký tự thường)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Cho phép
+- Ký tự thường là ký tự cho phép toàn hệ thống:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_270,,"Kiểm tra ""Tên báo giá"" là ký tự cho phép (Ký tự thường)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Cho phép
+- Ký tự thường là ký tự cho phép toàn hệ thống:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_271,,"Kiểm tra ""Mô tả"" là ký tự cho phép (Ký tự thường)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Cho phép
+- Ký tự thường là ký tự cho phép toàn hệ thống:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_272,,"Kiểm tra ""Ghi chú"" là ký tự cho phép (Ký tự thường)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Cho phép
+- Ký tự thường là ký tự cho phép toàn hệ thống:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_273,,"Kiểm tra ""Số báo giá"" là ký tự cho phép (Ký tự thường)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Cho phép
+- Ký tự thường là ký tự cho phép toàn hệ thống:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_274,,"Kiểm tra ""Tên khách hàng"" là ký tự cho phép (Ký tự thường)
+Group 2 ""Thông tin khách hàng""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_275,,"Kiểm tra là ký tự cho phép (Ký tự thường)
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_276,,"Kiểm tra ""Tên xuất hóa đơn"" là ký tự cho phép (Ký tự thường)
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_277,,"Kiểm tra ""Địa chỉ xuất hóa đơn"" là ký tự cho phép (Ký tự thường)
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_278,,"Kiểm tra ""Mã số thuế xuất hóa đơn"" là ký tự cho phép (Ký tự thường)
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_279,,"Kiểm tra ""Địa chỉ kho xuất hàng"" là ký tự cho phép (Ký tự thường)
+Group 5 ""Thông tin vận chuyển""","Nhập/Paste giá trị =
+aZ01Ă_-+.,()'/$€£¥₹₽","- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_280,,"Kiểm tra là ký tự cho phép (Ký tự thường)
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_281,,"Kiểm tra ""Mã báo giá"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Không cho phép
+- Ngoại trừ các ký tự thường là ký tự cho phép như danh sách bên dưới, còn lại là các ký tự đặc biệt không cho phép:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Dấu cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)
+
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Ngoài các ký tự trên, hệ thống thông báo - Error message: ""Mã báo giá không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_282,,"Kiểm tra ""Tên báo giá"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Không cho phép
+- Ngoại trừ các ký tự thường là ký tự cho phép như danh sách bên dưới, còn lại là các ký tự đặc biệt không cho phép:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Dấu cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)
+
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Ngoài các ký tự trên, hệ thống thông báo - Error message: ""Tên báo giá không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_283,,"Kiểm tra ""Mô tả"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Không cho phép
+- Ngoại trừ các ký tự thường là ký tự cho phép như danh sách bên dưới, còn lại là các ký tự đặc biệt không cho phép:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Dấu cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)
+
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Ngoài các ký tự trên, hệ thống thông báo - Error message: ""Mô tả không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_284,,"Kiểm tra ""Ghi chú"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Không cho phép
+- Ngoại trừ các ký tự thường là ký tự cho phép như danh sách bên dưới, còn lại là các ký tự đặc biệt không cho phép:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Dấu cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)
+
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Ngoài các ký tự trên, hệ thống thông báo - Error message: ""Ghi chú không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_285,,"Kiểm tra ""Số báo giá"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 1 ""Thông tin chung""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Không cho phép
+- Ngoại trừ các ký tự thường là ký tự cho phép như danh sách bên dưới, còn lại là các ký tự đặc biệt không cho phép:
++ Chữ cái (a-z, A-Z)
++ Số (0-9)
++ Unicode (Ă, Â…)
++ Gạch dưới (_)
++ Gạch ngang (-)
++ Dấu cộng (+)
++ Chấm (.)
++ Phẩy (,)
++ Mở ngoặc (()
++ Đóng ngoặc ())
++ Dấu nháy đơn (')
++ Dấu xoẹt (/)
++ Ký tự tiền tệ: ($), (€), (£), (¥), (₹), (₽)
+
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Ngoài các ký tự trên, hệ thống thông báo - Error message: ""Số báo giá không được chứa ký tự đặc biệt""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_286,,"Kiểm tra ""Tên khách hàng"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 2 ""Thông tin khách hàng""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_287,,"Kiểm tra là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_288,,"Kiểm tra ""Tên xuất hóa đơn"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_289,,"Kiểm tra ""Địa chỉ xuất hóa đơn"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_290,,"Kiểm tra ""Mã số thuế xuất hóa đơn"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 4 ""Thông tin xuất hóa đơn""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_291,,"Kiểm tra ""Địa chỉ kho xuất hàng"" là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 5 ""Thông tin vận chuyển""","Nhập/Paste giá trị =
+!@#%^&*<>?:;""{}[]|\ (Đã remove dấu cộng +)","- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_292,,"Kiểm tra là ký tự KHÔNG cho phép (Ký tự đặc biệt)
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_293,,"Kiểm tra ""Hiệu lực từ"" LỚN HƠN ""Hiệu lực đến""
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Hiệu lực từ"" = 15/05/2026
++ ""Hiệu lực đến"" = 10/05/2026","- Hệ thống thông báo (bên dưới field ""Hiệu lực đến"") - Error message: ""Hiệu lực đến phải sau hiệu lực từ""
+- Phát hiện dữ liệu không hợp lệ => Hệ thống thông báo ngay, không cần user chọn btn ""Thêm báo giá"" mới thông báo",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_294,,"Kiểm tra ""Hiệu lực từ"" BẰNG ""Hiệu lực đến""
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Hiệu lực từ"" = 15/05/2026
++ ""Hiệu lực đến"" = 15/05/2026",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_295,,"Kiểm tra ""Hiệu lực từ"" NHỎ HƠN ""Hiệu lực đến""
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Hiệu lực từ"" = 15/05/2026
++ ""Hiệu lực đến"" = 31/12/2026",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_296,,"Kiểm tra ""Giao hàng từ ngày"" LỚN HƠN ""Giao hàng đến ngày""
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Giao hàng từ ngày"" = 15/05/2026
++ ""Giao hàng đến ngày"" = 10/05/2026","- Hệ thống thông báo (bên dưới field ""Giao hàng đến ngày"") - Error message: ""Giao hàng đến ngày phải sau giao hàng từ ngày""
+- Phát hiện dữ liệu không hợp lệ => Hệ thống thông báo ngay, không cần user chọn btn ""Thêm báo giá"" mới thông báo",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_297,,"Kiểm tra ""Giao hàng từ ngày"" LỚN HƠN ""Giao hàng đến ngày""
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Giao hàng từ ngày"" = 15/05/2026
++ ""Giao hàng đến ngày"" = 15/05/2026",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_298,,"Kiểm tra ""Giao hàng từ ngày"" LỚN HƠN ""Giao hàng đến ngày""
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Giao hàng từ ngày"" = 15/05/2026
++ ""Giao hàng đến ngày"" = 31/12/2026",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_299,,"Kiểm tra ""Giao hàng từ ngày"" LỚN HƠN ""Giao hàng đến ngày""
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Giao hàng từ ngày"" = 15/05/2026
++ ""Giao hàng đến ngày"" = 31/12/2026",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_300,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = BG_DTL - Báo giá đường tinh luyện
+- Chọn button ""Thêm báo giá""","Hệ thống thông báo - Toast message: ""<icon error> Mã báo giá đã tồn tại""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_301,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Có khoảng trắng","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
+1. Nhập/Paste giá trị trùng = <khoảng trắng>BG_DTL - Báo giá đường tinh luyện
+2. Nhập/Paste giá trị trùng = BG_DTL - Báo giá<khoảng trắng><khoảng trắng>đường tinh luyện
+3. Nhập/Paste giá trị trùng = BG_DTL - Báo giá đường tinh luyện<khoảng trắng>
+- Chọn button ""Thêm báo giá""","Hệ thống thông báo - Toast message: ""<icon error> Mã báo giá đã tồn tại""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_302,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Chữ thường","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = bg_dtl - báo giá đường tinh luyện
+- Chọn button ""Thêm báo giá""","Hệ thống thông báo - Toast message: ""<icon error> Mã báo giá đã tồn tại""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_303,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Chữ IN HOA","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = BG_DTL - BÁO GIÁ ĐƯỜNG TINH LUYỆN
+- Chọn button ""Thêm báo giá""","Hệ thống thông báo - Toast message: ""<icon error> Mã báo giá đã tồn tại""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_304,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Chữ thường và IN HOA","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
+1. Nhập/Paste giá trị trùng = bg_dtl - BÁO GIÁ ĐƯỜNG TINH LUYỆN
+2. Nhập/Paste giá trị trùng = BG_DTL - báo giá đường tinh luyện
+- Chọn button ""Thêm báo giá""","Hệ thống thông báo - Toast message: ""<icon error> Mã báo giá đã tồn tại""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_305,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Tiếng Việt không dấu","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = BG_DTL - Bao gia duong tinh luyen
+- Chọn button ""Thêm báo giá""","Hệ thống thông báo - Toast message: ""<icon error> Mã báo giá đã tồn tại""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_306,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Tiếng Việt không dấu viết liền","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = BG_DTL - Baogiaduongtinhluyen
+- Chọn button ""Thêm báo giá""",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_307,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Có ký tự đặc biệt ở đầu","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = .BG_DTL - Báo giá đường tinh luyện
+- Chọn button ""Thêm báo giá""",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_308,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Có ký tự đặc biệt ở giữa","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = BG_DTL - Báo giá.đường tinh luyện
+- Chọn button ""Thêm báo giá""",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_309,,"Kiểm tra ""Mã báo giá"" là trùng key đã tồn tại trong hệ thống
+Có ký tự đặc biệt ở cuối","- Database tồn tại ""Mã báo giá"" = BG_DTL - Báo giá đường tinh luyện
++ Nhập/Paste giá trị trùng = BG_DTL - Báo giá đường tinh luyện.
+- Chọn button ""Thêm báo giá""",Cho phép,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_310,,"Kiểm tra ""Mã báo giá"" là xuống dòng
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+BG_DTL
+Báo giá đường tinh luyện
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_311,,"Kiểm tra ""Tên báo giá"" là xuống dòng
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+Báo giá
+Đường tinh luyện tháng 04/2026
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_312,,"Kiểm tra ""Mô tả"" là xuống dòng
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+Báo giá
+Cung cấp sản phẩm đường tinh luyện cho khách hàng doanh nghiệp
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_313,,"Kiểm tra ""Ghi chú"" là xuống dòng
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+Giá đã bao gồm VAT_10
+Áp dụng trong 15 ngày
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_314,,"Kiểm tra ""Số báo giá"" là xuống dòng
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+BG_DT
+2026_04_001
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_315,,"Kiểm tra ""Tên khách hàng"" là xuống dòng
+Group 2 ""Thông tin khách hàng""","- Nhập/Paste giá trị =
+Công ty TNHH
+Thực phẩm ABC
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_316,,"Kiểm tra là xuống dòng
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_317,,"Kiểm tra ""Tên xuất hóa đơn"" là xuống dòng
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị =
+Công ty TNHH
+Thực phẩm ABC CN HCM
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_318,,"Kiểm tra ""Địa chỉ xuất hóa đơn"" là xuống dòng
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị =
+123 Nguyễn Văn Linh
+Quận 7, TP. Hồ Chí Minh
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_319,,"Kiểm tra ""Mã số thuế xuất hóa đơn"" là xuống dòng
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị =
+03123
+45678
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_320,,"Kiểm tra ""Địa chỉ kho xuất hàng"" là xuống dòng
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị =
+Kho Bình Tân, 456 Quốc lộ 1A
+Quận Bình Tân, TP. Hồ Chí Minh
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_321,,"Kiểm tra là xuống dòng
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_322,,"Kiểm tra hiển thị ở field text: ""Mã báo giá"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+BG_DTL - Báo giá sản phẩm đường tinh luyện tháng 04.2026
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_323,,"Kiểm tra hiển thị ở field text: ""Tên báo giá"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+Báo giá cung cấp sản phẩm đường tinh luyện chất lượng cao phục vụ sản xuất thực phẩm và tiêu dùng nội địa tháng 04 năm 2026
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_324,,"Kiểm tra hiển thị ở field text: ""Mô tả"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+Báo giá chi tiết cho việc cung cấp sản phẩm đường tinh luyện đạt tiêu chuẩn an toàn thực phẩm, phục vụ cho các doanh nghiệp sản xuất bánh kẹo, nước giải khát và tiêu dùng trực tiếp tại thị trường Việt Nam
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_325,,"Kiểm tra hiển thị ở field text: ""Ghi chú"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+Giá đã bao gồm thuế giá trị gia tăng (VAT 10), chưa bao gồm chi phí vận chuyển ngoài khu vực nội thành. Thời gian hiệu lực báo giá trong vòng 15 ngày kể từ ngày phát hành. Điều khoản thanh toán linh hoạt theo thỏa thuận hợp đồng
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_326,,"Kiểm tra hiển thị ở field text: ""Số báo giá"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 1 ""Thông tin chung""","- Nhập/Paste giá trị =
+BG_DTL_2026_04_001_CHITIET_KHACHHANG_DOANHNGHIEP_LON
+- Chọn button ""Thêm báo giá""",Cho phép và lưu theo user nhập,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_327,,"Kiểm tra hiển thị ở field text: ""Tên khách hàng"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 2 ""Thông tin khách hàng""","- Nhập/Paste giá trị =
+Công ty Trách nhiệm Hữu hạn Sản xuất và Thương mại Thực phẩm ABC Việt Nam
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_328,,"Kiểm tra hiển thị ở field text khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_329,,"Kiểm tra hiển thị ở field text: ""Tên xuất hóa đơn"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị =
+Công ty Trách nhiệm Hữu hạn Sản xuất và Thương mại Thực phẩm ABC Việt Nam - CN HCM
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_330,,"Kiểm tra hiển thị ở field text: ""Địa chỉ xuất hóa đơn"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị =
+Số 123 Đường Nguyễn Văn Linh, Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh, Việt Nam
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_331,,"Kiểm tra hiển thị ở field text: ""Mã số thuế xuất hóa đơn"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 4 ""Thông tin xuất hóa đơn""","- Nhập/Paste giá trị =
+03123456780312345678031234567803123456780312345678
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Tài khoản xuất hóa đơn"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_332,,"Kiểm tra hiển thị ở field text: ""Địa chỉ kho xuất hàng"" khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 5 ""Thông tin vận chuyển""","- Nhập/Paste giá trị =
+Kho trung chuyển Bình Tân - Số 456 Quốc lộ 1A, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam
+- Chọn button ""Thêm báo giá""","- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_333,,"Kiểm tra hiển thị ở field text khi nhập vượt quá chiều rộng của field
+Text wrapping
+Group 6 ""Thông tin bốc xếp""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_334,,"Kiểm tra ""Mã báo giá"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Mã báo giá"" = BG-BG_DTL - Báo giá đường tinh luyện
++ Xóa dữ liệu ""Mã báo giá"" vừa nhập","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng nhập mã báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_335,,"Kiểm tra ""Người phụ trách"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Người phụ trách"" = duyenntm@msm.com.vn
++ Xóa dữ liệu ""Người phụ trách"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn người phụ trách""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_336,,"Kiểm tra ""Tên báo giá"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Tên báo giá"" = Báo giá đường tinh luyện tháng 04.2026
++ Xóa dữ liệu ""Tên báo giá"" vừa nhập","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng nhập tên báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_337,,"Kiểm tra ""Loại báo giá"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Loại báo giá"" = Sub Contract
++ Xóa dữ liệu ""Loại báo giá"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn loại báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_338,,"Kiểm tra ""Khách hàng"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Khách hàng"" = Công ty TNHH Thực phẩm ABC
++ Xóa dữ liệu ""Khách hàng"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn khách hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_339,,"Kiểm tra ""Tiền tệ"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Tiền tệ"" = Đồng
++ Xóa dữ liệu ""Tiền tệ"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn tiền tệ""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_340,,"Kiểm tra ""Bảng giá"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Bảng giá"" = Bảng giá tháng 04.2026
++ Xóa dữ liệu ""Bảng giá"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn bảng giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_341,,"Kiểm tra ""Số thập phân của giá"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Bảng giá"" = Bảng giá tháng 04.2026
++ ""Số thập phân của giá"" = 2
++ Xóa dữ liệu ""Số thập phân của giá"" vừa nhập","- Field là readonly
+- Mặc định load dữ liệu theo ""Bảng giá"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_342,,"Kiểm tra ""Ngày báo giá"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Ngày báo giá"" = 11/04/2026
++ Xóa dữ liệu ""Ngày báo giá"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn ngày báo giá""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_343,,"Kiểm tra ""Hiệu lực từ"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Hiệu lực từ"" = 01/04/2026
++ Xóa dữ liệu ""Hiệu lực từ"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn hiệu lực từ""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_344,,"Kiểm tra ""Hiệu lực đến"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Hiệu lực đến"" = 30/04/2026
++ Xóa dữ liệu ""Hiệu lực đến"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn hiệu lực đến""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_345,,"Kiểm tra ""Pháp nhân bán hàng"" xóa dữ liệu chọn trong field required
+Group 1 ""Thông tin chung""","- Chọn/ nhập dữ liệu:
++ ""Pháp nhân bán hàng"" = BHC
++ Xóa dữ liệu ""Pháp nhân bán hàng"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn pháp nhân bán hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_346,,"Kiểm tra ""Tên khách hàng"" xóa dữ liệu chọn trong field required
+Group 2 ""Thông tin khách hàng""","- Chọn/ nhập dữ liệu:
++ ""Khách hàng"" = Công ty TNHH Thực phẩm ABC
++ ""Tên khách hàng"" = Công ty TNHH Thực phẩm ABC Sugar
++ Xóa dữ liệu ""Tên khách hàng"" vừa nhập","- Field là readonly
+- Mặc định load dữ liệu theo ""Khách hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_347,,"Kiểm tra xóa dữ liệu chọn trong field required
+Group 3 ""Thông tin thanh toán""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_348,,"Kiểm tra xóa dữ liệu chọn trong field required
+Group 4 ""Thông tin xuất hóa đơn""",N/A,N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_349,,"Kiểm tra ""BU xuất hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""BU xuất hàng"" = BHC
+- Chọn ""WMS"" = false
++ ""BH xuất hàng"" = Công ty Logistics ABC
++ Xóa dữ liệu ""Đơn vị tổ chức giao hàng"" vừa chọn","- Field là readonly
+- Mặc định load dữ liệu theo ""BU xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_350,,"Kiểm tra ""Tổ chức xuất hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Pháp nhân bán hàng"" = BHC
+- Chọn ""WMS"" = false
++ ""Tổ chức xuất hàng"" = BHS
++ Xóa dữ liệu ""Tổ chức xuất hàng"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn tổ chức xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_351,,"Kiểm tra ""Kho xuất hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Khách hàng"" = Công ty TNHH ABC
+- Chọn ""WMS"" = true
++ ""Kho xuất hàng"" = Kho Bình Tân
++ Xóa dữ liệu ""Kho xuất hàng"" vừa chọn","- Mặc định load dữ liệu theo ""Khách hàng"" được chọn
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn kho xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_352,,"Kiểm tra ""Địa chỉ kho xuất hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Kho xuất hàng"" = Kho Bình Tân
++ ""Địa chỉ kho xuất hàng"" = 456 Quốc lộ 1A, Bình Tân, TP.HCM
++ Xóa dữ liệu ""Địa chỉ kho xuất hàng"" vừa chọn","- Field là readonly
+- Mặc định load dữ liệu theo ""Kho xuất hàng"" được chọn",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_353,,"Kiểm tra ""Địa chỉ giao hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Kho xuất hàng"" = Kho Bình Tân
++ ""Địa chỉ giao hàng"" = KCN Tân Tạo, Bình Tân, TP.HCM
++ Xóa dữ liệu ""Địa chỉ giao hàng"" vừa chọn","- Mặc định load dữ liệu theo ""Khách hàng"" được chọn
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn địa chỉ giao hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_354,,"Kiểm tra ""Giao hàng từ ngày"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Giao hàng từ ngày"" = 10/04/2026
++ Xóa dữ liệu ""Giao hàng từ ngày"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn giao hàng từ ngày""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_355,,"Kiểm tra ""Giao hàng đến ngày"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Giao hàng đến ngày"" = 11/04/2026
++ Xóa dữ liệu ""Giao hàng đến ngày"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn giao hàng đến ngày""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_356,,"Kiểm tra ""Người nhận hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn/ nhập dữ liệu:
++ ""Người nhận hàng"" = Nguyễn Văn A
++ Xóa dữ liệu ""Người nhận hàng"" vừa chọn","- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn người nhận hàng""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_357,,"Kiểm tra ""Phương thức giao hàng"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Yêu cầu vận chuyển"" = true
++ ""Phương thức giao hàng"" = Giao hàng đường bộ
++ Xóa dữ liệu ""Phương thức giao hàng"" vừa chọn","- Field hiển thị khi chọn ""Yêu cầu vận chuyển"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn phương thức giao hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_358,,"Kiểm tra ""Xe vận chuyển"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Yêu cầu vận chuyển"" = true
+- Chọn ""Phương thức giao hàng"" = Trip (Tính theo chuyến)
++ ""Xe vận chuyển"" = Xe tải 5 tấn
++ Xóa dữ liệu ""Xe vận chuyển"" vừa chọn","- Field hiển thị khi chọn ""Yêu cầu vận chuyển"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn xe vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_359,,"Kiểm tra ""Đơn vị vận chuyển"" xóa dữ liệu chọn trong field required
+Group 5 ""Thông tin vận chuyển""","- Chọn ""Yêu cầu vận chuyển"" = true
+- Chọn ""Phương thức giao hàng"" = Ton (Tính theo khối lượng)
++ ""Đơn vị vận chuyển"" = Công ty Logistics ABC
++ Xóa dữ liệu ""Đơn vị vận chuyển"" vừa chọn","- Field hiển thị khi chọn ""Yêu cầu vận chuyển"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn đơn vị vận chuyển""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_360,,"Kiểm tra ""Phương thức bốc xếp"" xóa dữ liệu chọn trong field required
+Group 6 ""Thông tin bốc xếp""","- Chọn ""Yêu cầu bốc xếp"" = true
++ ""Phương thức bốc xếp"" = Xe nâng
++ Xóa dữ liệu ""Phương thức bốc xếp"" vừa chọn","- Field hiển thị khi chọn ""Yêu cầu bốc xếp"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn phương thức bốc xếp""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_361,,"Kiểm tra ""Bảng giá bốc xếp"" xóa dữ liệu chọn trong field required
+Group 6 ""Thông tin bốc xếp""","- Chọn ""Yêu cầu bốc xếp"" = true
++ ""Bảng giá bốc xếp"" = Bốc xếp bằng xe nâng (Tấn)
++ Xóa dữ liệu ""Bảng giá bốc xếp"" vừa chọn","- Field hiển thị khi chọn ""Yêu cầu bốc xếp"" = true
+- Viền đỏ field để cảnh báo trạng thái lỗi
+- Hệ thống thông báo - Error message: ""Vui lòng chọn bảng giá bốc xếp""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_362,,Kiểm tra cập nhật các field hệ thống khi thêm mới dữ liệu,"1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá chọn button ""Thêm mới""","- Thêm mới thành công và cập nhật vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
++ WHERE ""IsDeleted"" = false
+     ++ ""CreatedAt"" = Cập nhật đúng theo thời điểm (+7)
+     ++ ""CreatedBy"" = Cập nhật đúng tài khoản email
+     ++ ""CreatedById"" = Cập nhật đúng Id tài khoản email",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_363,,Kiểm tra lịch sử khi thêm mới dữ liệu,"1. Login vào Client Portal
+2. Left menu: Chọn ""Báo giá""
+3. Màn hình ""Quản lý báo giá chọn button ""Thêm mới""","- Tạo mới cập nhật ""Version"" = 0
+
+- Thêm mới thành công và cập nhật vào:
++ Database: digiretail_sale_process
++ Schemas: bhc
++ Table: ""Quotations""
+     ++ ""Version"" = 0",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_364, VIEW ,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 1 ""Thông tin chung""","1. Login vào Client Portal
+2. Left menu: Chọn ""Cơ hội bán hàng""
+3. Màn hình ""Quản lý cơ hội bán hàng"" chọn button ""Thêm mới""","- Page title: ""Thêm báo giá"":
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"": Gồm 24 field:
++ ""Mã báo giá"" là field TEXT, default = NULL và là enable
++ ""Người phụ trách"" là field CBO, default = NULL và là enable
++ ""Tên báo giá"" là field TEXT, default = NULL và là readonly
++ ""Mô tả"" là field TEXT, default = NULL và là enable
++ ""Ghi chú"" là field TEXT, default = NULL và là enable
++ ""Số báo giá"" là field TEXT, default = NULL và là enable
++ ""Loại báo giá"" là field CBO, default = NULL và là enable
++ ""Khách hàng"" là field CBO, default = NULL và là enable
++ ""Tiền tệ"" là field CBO, default = NULL và là enable
++ ""Bảng giá"" là field CBO, default = NULL và là enable
++ ""Số thập phân của giá"" là field NUMBER, default = NULL và là readonly
++ ""Sales phụ trách"" là field CBO, default = NULL và là enable
++ ""Ngày báo giá"" là field DATETIME, default = NULL và là enable
++ ""Hiệu lực từ"" là field DATETIME, default = NULL và là enable
+     ++ 
++ ""Hiệu lực đến"" là field DATETIME, default = NULL và là enable
+     ++ 
++ ""Tạo hợp đồng"" là field CHECKBOX, default = NULL và là enable
+     ++ 
+     ++ 
++ ""Pháp nhân bán hàng"" là field CBO, default = NULL và là enable
++ ""Tổng tiền trước thuế"" là field FOMULAR, default = ""-"" và là readonly
+     ++ 
++ ""Phí vận chuyển"" là field FOMULAR, default = ""-"" và là readonly
+     ++ 
++ ""Phí bốc xếp"" là field FOMULAR, default = ""-"" và là readonly
+     ++ 
++ ""Tổng phí vận chuyển, bốc xếp"" là field FOMULAR, default = ""-"" và là readonly
+     ++ 
++ ""Tổng thuế"" là field FOMULAR, default = ""-"" và là readonly
+     ++ 
++ ""Tổng tiền sau thuế"" là field FOMULAR, default = ""-"" và là readonly
+     ++ 
++ ""Đơn vị tổ chức"" là field TEXT, default = ""-"" và là readonly",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_365,,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 2 ""Thông tin khách hàng""","1. Login vào Client Portal
+2. Left menu: Chọn ""Cơ hội bán hàng""
+3. Màn hình ""Quản lý cơ hội bán hàng"" chọn button ""Thêm mới""","- Page title: ""Thêm báo giá"":
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"": Gồm 1 field:
++ ""Tên khách hàng"" là field TEXT, default = <load theo ...> và là readonly",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_366,,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 3 ""Thông tin thanh toán"" <Hidden on create>",N/A,N/A,7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_367,,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 4 ""Thông tin xuất hóa đơn""","1. Login vào Client Portal
+2. Left menu: Chọn ""Cơ hội bán hàng""
+3. Màn hình ""Quản lý cơ hội bán hàng"" chọn button ""Thêm mới""","- Page title: ""Thêm báo giá"":
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"" <Hidden on create>:
+- Group 4 ""Thông tin xuất hóa đơn"": Gồm 7 field:
++ ""Ngân hàng tham chiếu tỷ giá"" là field CBO, default = <load theo ...> và là readonly
++ ""Tỷ giá tham chiếu"" là field CBO, default = <load theo ...> và là readonly
++ ""Tỷ giá"" là field NUMBER, default = <load theo ...> và là readonly
++ ""Tài sản xuất hóa đơn"" là field CBO, default = <load theo ...> và là readonly
++ ""Tên xuất hóa đơn"" là field TEXT, default = <load theo ...> và là readonly
++ ""Địa chỉ xuất hóa đơn"" là field TEXT, default = <load theo ...> và là readonly
++ ""Mã số thuế xuất hóa đơn"" là field TEXT, default = <load theo ...> và là readonly",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_368,,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 5 ""Thông tin vận chuyển""","1. Login vào Client Portal
+2. Left menu: Chọn ""Cơ hội bán hàng""
+3. Màn hình ""Quản lý cơ hội bán hàng"" chọn button ""Thêm mới""","- Page title: ""Thêm báo giá"":
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"" <Hidden on create>:
+- Group 4 ""Thông tin vận chuyển"":
+- Group 5 ""Thông tin xuất hóa đơn"": Gồm 17 field:
++ ""Kho WMS"" là field CHECKBOX, default = <load theo ...> và là readonly
++ ""Đơn vị tổ chức giao hàng"" là field CBO, default = <load theo ...> và là readonly
++ ""Tổ chức xuất hàng"" là field CBO, default = <load theo ...> và là readonly
++  ""Kho xuất hàng"" là field CBO, default = <load theo ...> và là readonly
++ ""Địa chỉ kho xuất hàng"" là field TEXT, default = <load theo ...> và là readonly
++ ""Địa chỉ giao hàng"" là field CBO, default = <load theo ...> và là readonly
++ ""Giao hàng từ ngày"" là field DATETIME, default = <load theo ...> và là readonly
++ ""Giao hàng đến ngày"" là field DATETIME, default = <load theo ...> và là readonly
++ ""Ngày giao hàng"" là field DATETIME, default = <load theo ...> và là readonly
++ ""Ngày nhận hàng tự kiến"" là field DATETIME, default = <load theo ...> và là readonly
++ ""Người nhận hàng"" là field CBO, default = <load theo ...> và là readonly
++ ""Yêu cầu vận chuyển"" là field CHECKBOX, default = <load theo ...> và là readonly
++ ""Phương thức giao hàng"" là field CBO
++ ""Xe vận chuyển"" là field CBO 
++ ""Đơn vị vận chuyển"" là field CBO
++ ""Đối tác vận chuyển"" là field CBO
++ ""Bảng giá vận chuyển"" là field CBO",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_369,,Trường hợp …,,,,,,,,,,
+ID_370,,Trường hợp …,,,,,,,,,,
+ID_371,,Trường hợp …,,,,,,,,,,
+ID_372,,Trường hợp …,,,,,,,,,,
+ID_373,,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = false","1. Login vào Client Portal
+2. Left menu: Chọn ""Cơ hội bán hàng""
+3. Màn hình ""Quản lý cơ hội bán hàng"" chọn button ""Thêm mới""","- Page title: ""Thêm báo giá"":
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"" <Hidden on create>:
+- Group 4 ""Thông tin vận chuyển"":
+- Group 5 ""Thông tin xuất hóa đơn"":
+- Group 6 ""Thông tin bốc xếp"": Gồm 3 field:
++ ""Yêu cầu bốc xếp"" là field CHECKBOX, default = <load theo ...> và là readonly
++ ""Phương thức bốc xếp"" là field CBO, default = <load theo ...> và là readonly
++ ""Bảng giá bốc xếp"" là field CBO, default = <load theo ...> và là readonly",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_374,,"Kiểm tra xem dữ liệu màn hình ""Thêm báo giá""
+Group 6 ""Thông tin bốc xếp""
+Trường hợp ""Yêu cầu bốc xếp"" = true","1. Login vào Client Portal
+2. Left menu: Chọn ""Cơ hội bán hàng""
+3. Màn hình ""Quản lý cơ hội bán hàng"" chọn button ""Thêm mới""","- Page title: ""Thêm báo giá"":
+- Title bản ghi được chọn <nếu có 1 bản ghi thì default, nếu có 2 thì cho phép chọn>
+- Group 1 ""Thông tin chung"":
+- Group 2 ""Thông tin khách hàng"":
+- Group 3 ""Thông tin thanh toán"" <Hidden on create>:
+- Group 4 ""Thông tin vận chuyển"":
+- Group 5 ""Thông tin xuất hóa đơn"":
+- Group 6 ""Thông tin bốc xếp"": Gồm 3 field:
++ ""Yêu cầu bốc xếp"" là field CHECKBOX, default = <load theo ...> và là readonly
++ ""Phương thức bốc xếp"" là field CBO, default = <load theo ...> và là readonly
++ ""Bảng giá bốc xếp"" là field CBO, default = <load theo ...> và là readonly",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_375,,"Kiểm tra canh lề chuỗi / số page ""Thêm báo giá""",,"- Field Input:
++ Chuỗi, Số/ Ngày giờ: Luôn canh trái cho dù input là số hay chữ
++ Checkbox/ toggle: Canh giữa",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_376,,Kiểm tra nhập giá trị không tồn tại vào các cbo,"- Nhập dữ liệu không tồn tại vào các field cbo
+- Tab/Chọn ra ngoài",Dữ liệu nhập không tồn tại sẽ mất đi,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_377,,"Kiểm tra dữ liệu load ở cbo ""Người phụ trách""
+Group 1 ""Thông tin chung""","Chọn cbo ""Người phụ trách""","- Dữ liệu load từ màn hình ""Quản trị viên""
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_users
++ Schemas: bhc
++ Tables: users
++ WHERE: ""enabled"" = false",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_378,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Người phụ trách""
+Group 1 ""Thông tin chung""","Chọn cbo ""Người phụ trách""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_users
++ Schemas: bhc
++ Tables: users
++ WHERE: ""enabled"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_379,,"Kiểm tra chọn dữ liệu ở cbo ""Người phụ trách""
+Group 1 ""Thông tin chung""","Chọn multi ""Người phụ trách"" = Nguyễn Mỹ Duyên, Trần Thanh Mai",Single-select (cbo có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_380,,"Kiểm tra search placeholder trong cbo ""Người phụ trách""
+Group 1 ""Thông tin chung""","Chọn cbo ""Người phụ trách""","Placeholder ""Tìm theo mã người phụ trách hoặc tên người phụ trách""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_381,,"Kiểm tra dữ liệu load ở cbo ""Loại báo giá""
+Group 1 ""Thông tin chung""","Chọn cbo ""Loại báo giá""","- Dữ liệu load từ màn hình ""<chưa có> Quote Status"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Tables: currency
++ WHERE: ""status"" = ACTIVE",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_382,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Loại báo giá""
+Group 1 ""Thông tin chung""","Chọn cbo ""Loại báo giá""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Tables: currency
++ WHERE: ""status"" = ACTIVE
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_383,,"Kiểm tra chọn dữ liệu ở cbo ""Loại báo giá""
+Group 1 ""Thông tin chung""","Chọn multi ""Loại báo giá"" = A, B",Single-select,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_384,,"Kiểm tra hiển thị dữ liệu trong cbo ""Loại báo giá""
+Group 1 ""Thông tin chung""","Chọn cbo ""Loại báo giá""","Placeholder ""Tìm theo mã loại báo giá hoặc tên loại báo giá""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_385,,"Kiểm tra dữ liệu load ở cbo ""Khách hàng""
+Group 1 ""Thông tin chung""","Chọn cbo ""Khách hàng""","- Dữ liệu load từ màn hình ""Khách hàng"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active => Hỏi có where theo ""Loại khách hàng"" ko, vd: khách hàng cá nhân, nhà bán lẻ, nhà phân phối => CONFIRM??
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customer
++ Schemas: bhc
++ Table: ""customers""
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""IsDeleted"" = false
++ ORDER BY ""CreatedAt"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_386,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Khách hàng""
+Group 1 ""Thông tin chung""","Chọn cbo ""Khách hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customer
++ Schemas: bhc
++ Table: ""customers""
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""IsDeleted"" = false
++ ORDER BY ""CreatedAt"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_387,,"Kiểm tra chọn dữ liệu ở cbo ""Khách hàng""
+Group 1 ""Thông tin chung""","Chọn multi ""Khách hàng"" = Nguyễn Văn A, Trần Thị B",Single-select,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_388,,"Kiểm tra hiển thị dữ liệu trong cbo ""Khách hàng""
+Group 1 ""Thông tin chung""","Chọn cbo ""Khách hàng""","Placeholder ""Tìm theo mã khách hàng hoặc tên khách hàng""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_389,,"Kiểm tra dữ liệu load ở cbo ""Tiền tệ""
+Group 1 ""Thông tin chung""","Chọn cbo ""Tiền tệ""","- Load dữ liệu theo ""Khách hàng"" được chọn
+- Dữ liệu load từ màn hình ""Tiền tệ"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Tables: currency
++ WHERE: ""status"" = ACTIVE",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_390,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Tiền tệ""
+Group 1 ""Thông tin chung""","Chọn cbo ""Tiền tệ""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Tables: currency
++ WHERE: ""status"" = ACTIVE
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_391,,"Kiểm tra hiển thị dữ liệu trong cbo ""Tiền tệ""
+Group 1 ""Thông tin chung""","Chọn ""Tiền tệ"" = Đồng, Bảng Anh",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_392,,"Kiểm tra search placeholde trong cbo ""Tiền tệ""
+Group 1 ""Thông tin chung""","Chọn cbo ""Bảng giá""","Placeholder ""Tìm theo mã đơn vị tiền tệ hoặc tên đơn vị tiền tệ""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_393,,"Kiểm tra dữ liệu load ở cbo ""Bảng giá""
+Group 1 ""Thông tin chung""","Chọn cbo ""Bảng giá""","- Dữ liệu load từ màn hình ""Bảng giá"": Điều kiên:
++ Thông tin ""Khách hàng"" được chọn
++ Thông tin ""Tiền tệ"" được chọn
++ Thông tin ""Ngày báo giá"" phải thuộc thời hạn hiệu lực của ""Bảng giá"" được chọn
+- Cho phép lại
+
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_catalogs
++ Schemas: bhc
++ Tables: Price
++ WHERE:
+     + ""status"" = ACTIVE -- khách hàng
+     + ""status"" = ACTIVE -- tiền tệ
+     + ""status"" = ACTIVE -- hiệu lực",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_394,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Bảng giá""
+Group 1 ""Thông tin chung""","Chọn cbo ""Bảng giá""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_catalogs
++ Schemas: bhc
++ Tables: Price
++ WHERE:
+     + ""status"" = ACTIVE -- khách hàng
+     + ""status"" = ACTIVE -- tiền tệ
+     + ""status"" = ACTIVE -- hiệu lực
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_395,,"Kiểm tra hiển thị dữ liệu trong cbo ""Bảng giá""
+Group 1 ""Thông tin chung""","Chọn ""Bảng giá"" = ",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_396,,"Kiểm tra search placeholde trong cbo ""Bảng giá""
+Group 1 ""Thông tin chung""","Chọn cbo ""Bảng giá""","Placeholder ""Tìm theo mã bảng giá hoặc tên bảng giá""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_397,,"Kiểm tra dữ liệu load ở popup ""Sale phụ trách""
+Group 1 ""Thông tin chung""","Chọn popup ""Sale phụ trách""","- Dữ liệu load từ màn hình ""Nhân viên"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Đang hoạt động
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ WHERE: ""enabled"" = true",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_398,,"Kiểm tra sắp xếp dữ liệu load ở popup ""Sale phụ trách""
+Group 1 ""Thông tin chung""","Chọn popup ""Sale phụ trách""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ WHERE: ""enabled"" = true
++ ORDER BY ""created_at"" DESC",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,"SELECT * FROM bhc.employees where ""enabled"" = 'true' order by ""created_at"" desc"
+ID_399,,"Kiểm tra chọn dữ liệu ở popup ""Sale phụ trách""
+Group 1 ""Thông tin chung""","Chọn multi ""Sale phụ trách"" = Nguyễn Mỹ Duyên, Trần Thanh Mai",Single-select (cbo có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_400,,"Kiểm tra search placeholder trong popup ""Sale phụ trách""
+Group 1 ""Thông tin chung""","Chọn popup ""Sale phụ trách""","Placeholder ""Tìm theo mã sale phụ trách hoặc tên sale phụ trách""",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_401,,"Kiểm tra dữ liệu load ở cbo ""BU bán hàng""
+Group 1 ""Thông tin chung""","Chọn cbo ""BU bán hàng""","- Dữ liệu load từ màn hình ""Sơ đồ tổ chức"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_users
++ Schemas: bhc
++ Tables: organizations
++ WHERE:
+     ++ ""is_active"" = true
+     ++ ""is_deleted"" = false",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,"SELECT ""is_active"", ""is_deleted"", * FROM bhc.organizations WHERE ""is_active"" = 'true' AND ""is_deleted"" = 'false' 
+ORDER BY ""created_at"" DESC"
+ID_402,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""BU bán hàng""
+Group 1 ""Thông tin chung""","Chọn cbo ""BU bán hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_users
++ Schemas: bhc
++ Tables: organizations
+     ++ ""is_active"" = true
+     ++ ""is_deleted"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,"SELECT ""is_active"", ""is_deleted"", * FROM bhc.organizations WHERE ""is_active"" = 'true' AND ""is_deleted"" = 'false' 
+ORDER BY ""created_at"" DESC"
+ID_403,,"Kiểm tra chọn dữ liệu ở cbo ""BU bán hàng""
+Group 1 ""Thông tin chung""","Chọn multi ""BU bán hàng"" = A, B",Single-select (cbo có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_404,,"Kiểm tra search placeholder trong cbo ""BU bán hàng""
+Group 1 ""Thông tin chung""","Chọn cbo ""BU bán hàng""","Placeholder ""Tìm theo mã BU xuất hàng hoặc tên BU xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_405,,"Kiểm tra dữ liệu load ở cbo ""Ngân hàng tham chiếu tỷ giá""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Ngân hàng tham chiếu tỷ giá""","- Dữ liệu load từ màn hình ""<Bank Account => Chưa có>"": <Điều kiện chỉ lấy các record có ""Trạng thái"" = Active => Confirm>
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ WHERE: ""enabled"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_406,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Ngân hàng tham chiếu tỷ giá""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Ngân hàng tham chiếu tỷ giá""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_407,,"Kiểm tra chọn dữ liệu ở cbo ""Ngân hàng tham chiếu tỷ giá""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn multi ""Ngân hàng tham chiếu tỷ giá"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_408,,"Kiểm tra search placeholder trong cbo ""Ngân hàng tham chiếu tỷ giá""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Ngân hàng tham chiếu tỷ giá""","Placeholder ""Tìm theo mã ngân hàng tham chiếu tỷ giá hoặc tên ngân hàng tham chiếu tỷ giá""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_409,,"Kiểm tra dữ liệu load ở cbo ""Tỷ giá tham chiếu""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Tỷ giá tham chiếu""","- Dữ liệu load từ màn hình ""Tỷ giá"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: exchange_rate
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_410,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Tỷ giá tham chiếu""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Tỷ giá tham chiếu""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: exchange_rate
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_411,,"Kiểm tra chọn dữ liệu ở cbo ""Tỷ giá tham chiếu""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn multi ""Tỷ giá tham chiếu"" = A, B",Single-select (cbo có search),7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_412,,"Kiểm tra search placeholder trong cbo ""Tỷ giá tham chiếu""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Tỷ giá tham chiếu""","Placeholder ""Tìm theo mã tỷ giá tham chiếu hoặc tên tỷ giá tham chiếu""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_413,,"Kiểm tra dữ liệu load ở cbo ""Tài khoản xuất hóa đơn""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Tài khoản xuất hóa đơn""","- Dữ liệu load từ màn hình ""Khách hàng"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active => Hỏi có where theo ""Loại khách hàng"" ko, vd: khách hàng cá nhân, nhà bán lẻ, nhà phân phối => CONFIRM??
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customer
++ Schemas: bhc
++ Table: ""customers""
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""IsDeleted"" = false
++ ORDER BY ""CreatedAt"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_414,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Tài khoản xuất hóa đơn""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Tài khoản xuất hóa đơn""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customer
++ Schemas: bhc
++ Table: ""customers""
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""IsDeleted"" = false
++ ORDER BY ""CreatedAt"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_415,,"Kiểm tra chọn dữ liệu ở cbo ""Tài khoản xuất hóa đơn""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn multi ""Tài khoản xuất hóa đơn"" = Nguyễn Văn A, Trần Thị B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_416,,"Kiểm tra hiển thị dữ liệu trong cbo ""Tài khoản xuất hóa đơn""
+Group 4 ""Thông tin xuất hóa đơn""","Chọn cbo ""Tài khoản xuất hóa đơn""","Placeholder ""Tìm theo mã tài khoản xuất hóa đơn hoặc tên tài khoản xuất hóa đơn""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_417,,"Kiểm tra dữ liệu load ở cbo ""BU xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""BU xuất hàng""","- Dữ liệu load từ màn hình ""Sơ đồ tổ chức"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_users
++ Schemas: bhc
++ Tables: organizations
++ WHERE:
+     ++ ""is_active"" = true
+     ++ ""is_deleted"" = false",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_418,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""BU xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""BU xuất hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_users
++ Schemas: bhc
++ Tables: organizations
+     ++ ""is_active"" = true
+     ++ ""is_deleted"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_419,,"Kiểm tra chọn dữ liệu ở cbo ""BU xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""BU xuất hàng"" = A, B",Single-select (cbo có search),7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_420,,"Kiểm tra search placeholder trong cbo ""BU xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""BU xuất hàng""","Placeholder ""Tìm theo mã BU xuất hàng hoặc tên BU xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_421,,"Kiểm tra dữ liệu load ở cbo ""Tổ chức xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Tổ chức xuất hàng""","- Dữ liệu load từ màn hình ""<<chưa có> <Inventory Organization>"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ WHERE: ""enabled"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_422,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Tổ chức xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Tổ chức xuất hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_423,,"Kiểm tra chọn dữ liệu ở cbo ""Tổ chức xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Tổ chức xuất hàng"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_424,,"Kiểm tra search placeholder trong cbo ""Tổ chức xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Tổ chức xuất hàng""","Placeholder ""Tìm theo mã tổ chức xuất hàng hoặc tên tổ chức xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_425,,"Kiểm tra dữ liệu load ở cbo ""Kho xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Kho xuất hàng""","- Dữ liệu load từ màn hình ""Danh sách kho"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Đang hoạt động
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_inventoríes
++ Schemas: bhc
++ Tables: warehouses
++ WHERE:
+     ++ ""activated"" = true
+     ++ ""is_deleted"" = false <chưa có field này>",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_426,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Kho xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Kho xuất hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_inventoríes
++ Schemas: bhc
++ Tables: warehouses
++ WHERE:
+     ++ ""activated"" = true
+     ++ ""is_deleted"" = false <chưa có field này>
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,"SELECT * FROM bhc.warehouses WHERE ""activated"" = 'true' ORDER BY ""created_at"" DESC"
+ID_427,,"Kiểm tra chọn dữ liệu ở cbo ""Kho xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Kho xuất hàng"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_428,,"Kiểm tra search placeholder trong cbo ""Kho xuất hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Kho xuất hàng""","Placeholder ""Tìm theo mã kho xuất hàng hoặc tên kho xuất hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_429,,"Kiểm tra dữ liệu load ở cbo ""Địa chỉ giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Địa chỉ giao hàng""","- Dữ liệu load từ màn hình ""<<chưa có table> Customer Address>"" được chọn: Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ WHERE: ""enabled"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_430,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Địa chỉ giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Địa chỉ giao hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_431,,"Kiểm tra chọn dữ liệu ở cbo ""Địa chỉ giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Địa chỉ giao hàng"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_432,,"Kiểm tra search placeholder trong cbo ""Địa chỉ giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Địa chỉ giao hàng""","Placeholder ""Tìm theo mã địa chỉ giao hàng hoặc tên địa chỉ giao hàng""",7-Apr-26,,F,,,7-Apr-26,DUYENNTM,
+ID_433,,"Kiểm tra dữ liệu load ở cbo ""Người nhận hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Người nhận hàng""","- Dữ liệu load từ màn hình ""Khách hàng"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active => Hỏi có where theo ""Loại khách hàng"" ko, vd: khách hàng cá nhân, nhà bán lẻ, nhà phân phối => CONFIRM??
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customer
++ Schemas: bhc
++ Table: ""customers""
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""IsDeleted"" = false
++ ORDER BY ""CreatedAt"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_434,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Người nhận hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Người nhận hàng""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customer
++ Schemas: bhc
++ Table: ""customers""
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""IsDeleted"" = false
++ ORDER BY ""CreatedAt"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_435,,"Kiểm tra chọn dữ liệu ở cbo ""Người nhận hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Người nhận hàng"" = A, B",Single-select (cbo có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_436,,"Kiểm tra search placeholder trong cbo ""Người nhận hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Người nhận hàng""","Placeholder ""Tìm theo mã người nhận hàng hoặc tên người nhận hàng"" => NẾU LẤY TỪ CUSTOMER THÌ NÊN CHUNG 1 PLACEHOLDER",7-Apr-26,,,,,7-Apr-26,DUYENNTM,
+ID_437,,"Kiểm tra dữ liệu load ở cbo ""Phương thức giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Phương thức giao hàng""","- Dữ liệu load theo: <Danh sách tùy chỉnh, hardcode>
+- Dropdown load 2 giá trị:
++ ""Value"" - ""Enum Code"" = Ton (Tính theo khối lượng) - TON
++ ""Value"" - ""Enum Code"" = Trip (Tính theo chuyến) - TRIP",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_438,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Phương thức giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Phương thức giao hàng""",Dữ liệu bên trong cbo được sắp xếp theo thứ tự alphabet,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_439,,"Kiểm tra hiển thị dữ liệu trong cbo ""Phương thức giao hàng""
+Group 5 ""Thông tin vận chuyển""","Chọn ""Phương thức giao hàng"" = Tính theo khối lượng, Tính theo chuyến",Single select dropdown (cbo ko có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_440,,"Kiểm tra dữ liệu load ở cbo ""Xe vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Xe vận chuyển""","- Dữ liệu load từ màn hình ""<chưa có> => <Truck Load>"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ WHERE: ""enabled"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_441,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Xe vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Xe vận chuyển""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_customers
++ Schemas: bhc
++ Tables: employees
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_442,,"Kiểm tra chọn dữ liệu ở cbo ""Xe vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Xe vận chuyển"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_443,,"Kiểm tra search placeholder trong cbo ""Xe vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Xe vận chuyển""","Placeholder ""Tìm theo mã vận chuyển hoặc tên vận chuyển""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_444,,"Kiểm tra dữ liệu load ở cbo ""Đơn vị vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Đơn vị vận chuyển""","- Dữ liệu load từ màn hình ""Đơn vị"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_445,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Đơn vị vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Đơn vị vận chuyển""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_446,,"Kiểm tra chọn dữ liệu ở cbo ""Đơn vị vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Đơn vị vận chuyển"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_447,,"Kiểm tra search placeholder trong cbo ""Đơn vị vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Đơn vị vận chuyển""","Placeholder ""Tìm theo mã vận chuyển hoặc tên vận chuyển""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_448,,"Kiểm tra dữ liệu load ở cbo ""Đối tác vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Đối tác vận chuyển""","- Dữ liệu load từ màn hình ""<Shipping Provider>"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_449,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Đối tác vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Đối tác vận chuyển""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_450,,"Kiểm tra chọn dữ liệu ở cbo ""Đối tác vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Đối tác vận chuyển"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_451,,"Kiểm tra search placeholder trong cbo ""Đối tác vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Đối tác vận chuyển""","Placeholder ""Tìm theo mã đối tác vận chuyển hoặc tên đối tác vận chuyển""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_452,,"Kiểm tra dữ liệu load ở cbo ""Bảng giá vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Bảng giá vận chuyển""","- Dữ liệu load từ màn hình ""<Shipping Price List>"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false <màn hình hiện tại chỉ view>",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_453,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Bảng giá vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Bảng giá vận chuyển""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false <màn hình hiện tại chỉ view>
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_454,,"Kiểm tra chọn dữ liệu ở cbo ""Bảng giá vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn multi ""Bảng giá vận chuyển"" = A, B",Single-select (cbo có search),7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_455,,"Kiểm tra search placeholder trong cbo ""Bảng giá vận chuyển""
+Group 5 ""Thông tin vận chuyển""","Chọn cbo ""Bảng giá vận chuyển""","Placeholder ""Tìm theo mã bảng giá vận chuyển hoặc tên bảng giá vận chuyển""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_456,,"Kiểm tra dữ liệu load ở cbo ""Phương thức bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn cbo ""Phương thức bốc xếp""","- Dữ liệu load theo: <Danh sách tùy chỉnh, hardcode>
+- Dropdown load 2 giá trị:
++ ""Value"" - ""Enum Code"" = Ton (Tính theo khối lượng) - TON
++ ""Value"" - ""Enum Code"" = Trip (Tính theo chuyến) - TRIP",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_457,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Phương thức bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn cbo ""Phương thức bốc xếp""",Dữ liệu bên trong cbo được sắp xếp theo thứ tự alphabet,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_458,,"Kiểm tra hiển thị dữ liệu trong cbo ""Phương thức bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn ""Phương thức bốc xếp"" = Ton, Trip",Single select dropdown (cbo ko có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_459,,"Kiểm tra dữ liệu load ở cbo ""Bảng giá bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn cbo ""Bảng giá bốc xếp""","- Dữ liệu load từ màn hình ""<Porter Price List>"": Điều kiện chỉ lấy các record có ""Trạng thái"" = Active
+- Cho phép lại
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_460,,"Kiểm tra sắp xếp dữ liệu load ở cbo ""Bảng giá bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn cbo ""Bảng giá bốc xếp""","- Sắp xếp ưu tiên theo thứ tự:
++ Dữ liệu được sắp xếp theo thứ tự giảm dần theo thời gian tạo
++ Dữ liệu được tạo sau sẽ nằm ở trên
+
+- Dữ liệu load theo: <Danh sách từ bảng có sẵn>
++ Database: digiretail_master_data
++ Schemas: bhc
++ Table: unit
++ WHERE:
+     ++ ""status"" = ACTIVE
+     ++ ""is_deleted"" = false
++ ORDER BY ""created_at"" DESC",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_461,,"Kiểm tra chọn dữ liệu ở cbo ""Bảng giá bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn multi ""Bảng giá bốc xếp"" = A, B",Single-select (cbo có search),7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_462,,"Kiểm tra search placeholder trong cbo ""Bảng giá bốc xếp""
+Group 6 ""Thông tin bốc xếp""","Chọn cbo ""Bảng giá bốc xếp""","Placeholder ""Tìm theo mã bảng giá bốc xếp hoặc tên bảng giá bốc xếp""",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_463,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo required
+Group 1 ""Thông tin chung""","- Chọn dữ liệu trong các field cbo: ""Người phụ trách"", ""Loại báo giá"", ""Khách hàng"", ""Tiền tệ"", ""Bảng giá"", ""Pháp nhân bán hàng""
+- Focus vào field","Field cbo là required => Không hiển thị icon xóa (x) bên trong field
+** Hiện tại icon xóa (x) bên trong field",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_464,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo not required
+Group 1 ""Thông tin chung""","- Chọn dữ liệu trong field cbo: ""Sales phụ trách""
+- Focus vào field",Field cbo là not required => Hiển thị icon xóa (x) bên trong field,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_465,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo required
+Group 2 ""Thông tin khách hàng""","- Chọn dữ liệu trong field cbo: N/A
+- Focus vào field","Field cbo là required => Không hiển thị icon xóa (x) bên trong field => N/A
+** Hiện tại icon xóa (x) bên trong field",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_466,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo not required
+Group 2 ""Thông tin khách hàng""","- Chọn dữ liệu trong field cbo: N/A
+- Focus vào field",Field cbo là not required => Hiển thị icon xóa (x) bên trong field => N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_467,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo required
+Group 3 ""Thông tin thanh toán""","- Chọn dữ liệu trong field cbo: N/A
+- Focus vào field","Field cbo là required => Không hiển thị icon xóa (x) bên trong field => N/A
+** Hiện tại icon xóa (x) bên trong field",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_468,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo not required
+Group 3 ""Thông tin thanh toán""","- Chọn dữ liệu trong field cbo: N/A
+- Focus vào field",Field cbo là not required => Hiển thị icon xóa (x) bên trong field => N/A,7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_469,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo required
+Group 4 ""Thông tin xuất hóa đơn""","- Chọn dữ liệu trong field cbo: N/A
+- Focus vào field","Field cbo là required => Không hiển thị icon xóa (x) bên trong field => N/A
+** Hiện tại icon xóa (x) bên trong field",7-Apr-26,,NY,,,7-Apr-26,DUYENNTM,
+ID_470,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo not required
+Group 4 ""Thông tin xuất hóa đơn""","- Chọn dữ liệu trong các field cbo: ""Ngân hàng tham chiếu tỷ giá"", ""Tỷ giá tham chiếu""
+- Focus vào field",Field cbo là not required => Hiển thị icon xóa (x) bên trong field,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_471,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo required
+Group 5 ""Thông tin vận chuyển""","- Chọn dữ liệu trong các field cbo: ""Đơn vị tổ chức giao hàng"" (required khi ""WMS"" = true), ""Tổ chức xuất hàng"" (required khi ""WMS"" = false), ""Kho xuất hàng"" (required khi ""WMS"" = true), ""Địa chỉ giao hàng"", ""Người nhận hàng"", ""Phương thức giao hàng"" (required khi ""Yêu cầu vận chuyển"" = true), ""Xe vận chuyển"" (required khi ""Phương thức giao hàng"" = Tính theo chuyến (Trip)), ""Đơn vị vận chuyển"" (required khi ""Phương thức giao hàng"" = Tính theo khối lượng (Ton))","Field cbo là required => Không hiển thị icon xóa (x) bên trong field
+** Hiện tại icon xóa (x) bên trong field",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_472,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo not required
+Group 5 ""Thông tin vận chuyển""","- Chọn dữ liệu trong các field cbo: ""Tổ chức xuất hàng"" (not required khi ""WMS"" = false), ""Xe vận chuyển"" (not required khi ""Phương thức giao hàng"" <> Tính theo chuyến (Trip)), ""Đơn vị vận chuyển"" (not required khi ""Phương thức giao hàng"" <> Tính theo trọng lượng (Ton)), ""Đối tác vận chuyển"", ""Bảng giá vận chuyển""
+- Focus vào field",Field cbo là not required => Hiển thị icon xóa (x) bên trong field,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_473,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo required
+Group 6 ""Thông tin bốc xếp""","- Chọn dữ liệu trong các field cbo: ""Phương thức bốc xếp"" (required khi ""Yêu cầu bốc xếp"" = true), ""Bảng giá bốc xếp"" (required khi ""Yêu cầu bốc xếp"" = true)","Field cbo là required => Không hiển thị icon xóa (x) bên trong field
+** Hiện tại icon xóa (x) bên trong field",7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+ID_474,,"Kiểm tra hiển thị icon xóa (x) trong các field cbo not required
+Group 6 ""Thông tin bốc xếp""","- Chọn dữ liệu trong các field cbo: ""Tổ chức xuất hàng"" (not required khi ""WMS"" = false), ""Xe vận chuyển"" (not required khi ""Phương thức giao hàng"" <> Tính theo chuyến (Trip)), ""Đơn vị vận chuyển"" (not required khi ""Phương thức giao hàng"" <> Tính theo trọng lượng (Ton)), ""Đối tác vận chuyển"", ""Bảng giá vận chuyển""
+- Focus vào field",Field cbo là not required => Hiển thị icon xóa (x) bên trong field,7-Apr-26,,P,,,7-Apr-26,DUYENNTM,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+"Must insert rows above this line. Note: using ""Insert Copied Cells"" function to insert.",,,,,,,,,,,,
